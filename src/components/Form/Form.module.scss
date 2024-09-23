@@ -1,0 +1,336 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.block {
+  position: static;
+  margin-bottom: 15px;
+
+  width: 100%;
+  max-width: 656px;
+  padding: 65px 40px 40px;
+
+  border-radius: 60px;
+  background: linear-gradient(to bottom, rgba($blue, .2), rgba(#0C1237, .2));
+  backdrop-filter: blur(5px);
+
+  @media (max-width: $md-3) {
+    border-radius: 20px;
+    @include adaptiv-value('padding', 80, 10, 1);
+    @include adaptiv-value('padding-top', 150, 80, 1);
+    padding-bottom: 30px;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(#253074, .3);
+    border-radius: 60px;
+    pointer-events: none;
+
+    @media (max-width: $md-3) {
+      border-radius: 20px;
+    }
+  }
+
+  h2 {
+    font-weight: 400;
+    letter-spacing: 5px;
+    line-height: 1.1;
+    color: $white;
+    text-align: center;
+    text-shadow: 0 0 10px rgba($secondary, .5), 2px 2px rgba($primary, .2);
+    @include adaptiv-value('font-size', 24, 20, 1);
+  }
+
+  .el {
+    display: block;
+    margin: 20px auto;
+
+    @media (max-width: $md-3) {
+      @include adaptiv-value('width', 274, 200, 1);
+      @include adaptiv-value('margin-top', 20, 10, 1);
+      @include adaptiv-value('margin-bottom', 20, 10, 1);
+    }
+  }
+}
+
+.head {
+  position: absolute;
+  left: 50%;
+  top: -120px;
+
+  background: url('../../assets/images/block/header-sm.png') center no-repeat;
+  background-size: cover;
+  text-align: center;
+
+  width: 100%;
+  height: 100%;
+  max-width: 622px;
+  max-height: 204px;
+
+  translate: -50% 0;
+
+  @media (max-width: $md-3) {
+    @include adaptiv-value('top', -120, -40, 1);
+    @include adaptiv-value('height', 300, 130, 1);
+    width: 100vw;
+  }
+
+  p {
+    position: relative;
+    top: 30px;
+    color: $green;
+    text-shadow: 0 0 10px rgba($green, .5), 2px -1px rgba($green, .3);
+    @include adaptiv-value('font-size', 14, 12, 1);
+
+    @media (max-width: $md-3) {
+      top: 22px;
+    }
+  }
+
+  h4 {
+    position: relative;
+    top: 70px;
+    @include adaptiv-value('font-size', 20, 16, 1);
+    
+    span {
+      padding: 0 5px;
+
+      font-weight: 400;
+      color: $secondary;
+      text-shadow: 0 0 10px rgba($secondary, .5), 2px -1px rgba($blue, .3);
+    }
+
+    @media (max-width: $md-3) {
+      @include adaptiv-value('top', 100, 40, 1);
+    }
+
+    @media (max-width: $md-4) {
+      padding: 0 15px;
+
+      img {
+        display: none;
+      }
+    }    
+  }  
+}
+
+.fragment {
+  display: flex;
+  align-items: center;
+  margin-bottom: 35px;
+
+  .price {
+    text-align: center;
+    width: 100%;
+    max-width: 390px;
+    padding: 21px 0;
+
+    background: linear-gradient(to bottom, rgba($secondary, 0), rgba($secondary, .2));
+
+    color: $green;
+    font-size: 20px;
+    text-shadow: 0 0 10px rgba($green, .5), 2px -1px rgba($green, .3);
+
+    @media (max-width: $md-4) {
+      margin: 0 auto;
+      @include adaptiv-value('font-size', 20, 16, 1);
+      @include adaptiv-value('padding-top', 21, 15, 1);
+      @include adaptiv-value('padding-bottom', 21, 15, 1);
+    }
+  }
+
+  @media (max-width: $md-4) {
+    img {
+      display: none;
+    }
+  }
+}
+
+form {
+  border: 1px solid rgba($secondary, .3);
+  border-radius: 20px;
+  padding: 20px 40px;
+
+  @media (max-width: $md-4) {
+    @include adaptiv-value('padding-left', 40, 15, 1);
+    @include adaptiv-value('padding-right', 40, 15, 1);
+    @include adaptiv-value('padding-top', 20, 10, 1);
+    @include adaptiv-value('padding-bottom', 20, 10, 1);
+  }
+}
+
+fieldset {
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+
+  @media (max-width: $md-4) {
+    flex-wrap: wrap;
+  }
+}
+
+legend {
+  text-align: center;
+  font-size: 12px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba($primary, .3);
+}
+
+input[type="radio"] {
+  appearance: none;
+  display: none;
+}
+
+.currency {
+  position: relative;
+  width: 160px;
+  padding: 12px 0; 
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  background: rgba($blue, .35);
+  border-radius: 8px;
+  cursor: pointer;
+
+  transition: background .2s ease;
+
+  @media (max-width: $md-4) {
+    width: 140px;
+    padding: 9px 0;
+  }
+
+  span {
+    color: $secondary;
+    text-shadow: 0 0 10px rgba($secondary, .5), 2px -1px rgba($blue, .3);
+    font-size: 20px;
+
+    @media (max-width: $md-4) {
+      font-size: 17px;
+    }
+  }
+
+  &.active:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(#2CD3FF, .4);
+    border-radius: 8px;
+  }
+}
+
+.inputField {
+  padding: 15px 20px;
+  margin-bottom: 10px;
+
+  border-bottom: 1px solid $primary;
+  background: linear-gradient(to bottom, rgba($primary, 0), rgba($primary, .2));
+
+  @media (max-width: $md-4) {
+    @include adaptiv-value('padding-left', 20, 10, 1);
+    @include adaptiv-value('padding-right', 20, 10, 1);
+    @include adaptiv-value('padding-top', 15, 7, 1);
+    @include adaptiv-value('padding-bottom', 15, 7, 1);
+  }
+
+  input {
+    display: block;
+    width: 100%;
+    color: $white;
+    text-shadow: 2px -1px rgba($blue, .2);
+    font-size: 20px;
+
+    @media (max-width: $md-4) {
+      @include adaptiv-value('font-size', 20, 16, 1);
+    }
+  }
+  
+  label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 10px;
+    
+    & > * {
+      font-size: 12px; 
+      text-shadow: 0 0 10px rgba($primary, .3);     
+
+      @media (max-width: $md-4) {
+        @include adaptiv-value('font-size', 12, 10, 1);
+      }
+    }
+  }
+}
+
+.button {
+  position: relative;
+  background: url('../../assets/icons/button-lg.svg') center no-repeat;
+  background-size: cover;
+  color: $white;
+  
+  margin-top: 10px;
+  width: 100%;
+  padding: 15px 0;
+
+  transition: all .2s ease;
+
+  @media (hover: hover) {
+    &:hover {
+      text-shadow: 0 0 2.5px $white;
+    }
+  }
+
+  @media (hover: none) {
+    &:active {
+      text-shadow: 0 0 2.5px $white;
+    }
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+  
+    width: 80%;
+    height: 80%;
+  
+    background: rgba($secondary, .5);
+    filter: blur(1rem);
+  
+    translate: -50% -50%;
+  }
+}
+
+.text {
+  margin-top: 20px;
+  text-align: center;
+  color: $secondary;
+  font-size: 12px;
+  line-height: 1.1;
+  text-shadow: 0 0 10px rgba($primary, .3);
+}

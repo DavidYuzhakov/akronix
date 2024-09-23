@@ -1,0 +1,131 @@
+.banner {
+  @include adaptiv-value('padding-top', 100, 50, 1);
+  @include adaptiv-value('padding-bottom', 100, 75, 1);
+
+  &-wrapper {
+    position: relative;
+    background: url('../assets/images/banner/bg.svg') center no-repeat;
+    background-size: cover;
+    max-width: 100%;
+
+    @include adaptiv-value('height', 387, 0, 1);
+    
+    @media (max-width: $md-2) {
+      @include adaptiv-value('height', 387, 70, 1);
+    }
+
+    @media (max-width: $md-3) {
+      background: url('../assets/images/banner/bg-sm.svg') center no-repeat;
+      background-size: cover;
+      max-width: 485px;
+      margin: 0 auto;
+      height: 420px;
+    }
+
+    @media (max-width: $md-4) {
+      @include adaptiv-value('height', 1110, 255, 1)
+    }
+  }
+
+  &__element {
+    position: absolute;
+    @include adaptiv-value('width', 200, 90, 1);
+
+    &--first {
+      top: 0;
+      left: 0;
+    }
+
+    &--second {
+      right: 0;
+      bottom: 0;
+    }
+
+    @media (max-width: $md-1) {
+      &--first {
+        top: -40px;
+        left: -40px;
+      }
+
+      &--second {
+        right: -40px;
+        bottom: -40px;
+      }
+    }
+
+    @media (max-width: $md-2) {
+      &--first {
+        left: 0;
+        top: -100px;
+      }
+
+      &--second {
+        right: 0;
+        bottom: -100px;
+      }
+    }
+
+    @media (max-width: $md-3) {
+      &--first {
+        @include adaptiv-value('top', -100, -40, 1);
+      }
+      
+      &--second {
+        @include adaptiv-value('bottom', -100, -65, 1);
+      }
+    }
+
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    max-width: 890px;
+    margin: 0 auto;
+
+    @media (max-width: $md-2) {
+      padding: 0 30px;
+    }
+
+    @media (max-width: $md-4) {
+      @include adaptiv-value('padding-right', 30, 10, 1);
+      @include adaptiv-value('padding-left', 30, 10, 1);
+    }
+
+    h3 {
+      font-weight: 400;
+      letter-spacing: 5px;
+      color: $white;
+      line-height: 1.2;
+      
+      text-shadow: 2px 2px rgba($primary, .2), 0 0 10px rgba($secondary, .5);
+      @include adaptiv-value('font-size', 24, 14, 1);
+      @include adaptiv-value('margin-bottom', 20, 5, 1);
+    }
+
+    &__text {
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
+      color: $secondary;
+      text-shadow: 0 0 10px rgba($secondary, .5), 2px -1px rgba($blue, .3);
+      line-height: 1.2;
+
+      @include adaptiv-value('font-size', 20, 12, 1);
+      @include adaptiv-value('gap', 30, 0, 1);
+
+      @media (max-width: $md-2) {
+        gap: 0;
+
+        img {
+          display: none;
+        }
+      }
+    }
+  }
+}
+

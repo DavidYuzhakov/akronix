@@ -1,0 +1,176 @@
+@import '../../scss/mixins';
+@import '../../scss/variables';
+
+.block {
+  position: relative;
+
+  &._animate {
+    h2, .text, .img {
+      opacity: 1;
+      scale: 1;
+      translate: 0 0;
+    }
+  }
+
+  h2 {
+    opacity: 0;
+    translate: 0 50%;
+    transition: all .4s ease-in-out;
+  }
+}
+
+.bg {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: -1;
+
+  max-width: 100%;
+  
+  @media (max-width: $lg) {
+    top: 75%;
+  }
+
+  @media (max-width: $md-2) {
+    top: 90%;
+  }
+
+  @media (max-width: $md-4) {
+    top: 97%;
+  }
+}
+
+.header {
+  position: absolute;
+  left: 50%;
+  top: -120px;
+  z-index: 1;
+
+  background: url('../../assets/images/block/header.png') center no-repeat;
+  background-size: cover;
+  text-align: center;
+
+  width: 100%;
+  height: 100%;
+  max-width: 1192px;
+  max-height: 204px;
+
+  translate: -50% 0;
+  
+  @media (max-width: $md-3) {
+    background: url('../../assets/images/block/header-sm.png') center no-repeat;
+    background-size: cover;
+    @include adaptiv-value('top', -120, -40, 1);
+    @include adaptiv-value('height', 300, 130, 1)
+  }
+
+  p {
+    position: relative;
+    top: 30px;
+    color: $green;
+    text-shadow: 0 0 10px rgba($green, .5), 2px -1px rgba($green, .3);
+    @include adaptiv-value('font-size', 14, 12, 1);
+
+    @media (max-width: $md-3) {
+      top: 22px;
+    }
+  }
+
+  h4 {
+    position: relative;
+    top: 70px;
+
+    font-weight: 400;
+    @include adaptiv-value('font-size', 20, 12, 1);
+    
+    span {
+      padding: 0 5px;
+      color: $secondary;
+      text-shadow: 0 0 10px rgba($secondary, .5), 2px -1px rgba($blue, .3);
+    }
+
+    @media (max-width: $md-3) {
+      @include adaptiv-value('top', 100, 40, 1);
+    }
+
+    @media (max-width: $md-4) {
+      padding: 0 15px;
+
+      img {
+        display: none;
+      }
+    }
+
+  }  
+}
+
+.content {
+  position: relative;
+  text-align: center;
+
+  width: 100%;
+  margin: 0 auto;
+  padding: 65px;
+
+  border-radius: 60px;
+  background: linear-gradient(to bottom, rgba($blue, .2), rgba(#0C1237, .2));
+  backdrop-filter: blur(5px);
+
+  @media (max-width: $md-3) {
+    padding: 10px;
+    @include adaptiv-value('padding-top', 200, 80, 1);
+    padding-bottom: 30px;
+    border-radius: 20px;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(#253074, .3);
+    border-radius: 60px;
+    pointer-events: none;
+
+    @media (max-width: $md-3) {
+      border-radius: 20px;
+    }
+  }
+
+  .img {
+    display: block;
+    margin: 20px auto;
+
+    scale: .5;
+    opacity: 0;
+    transition: all .4s ease-in-out .3s;
+
+    @media (max-width: $md-3) {
+      @include adaptiv-value('width', 274, 200, 1);
+    }
+  }
+
+  .text {
+    line-height: 1.2;
+    text-shadow: 0 0 10px rgba($primary, .3);
+    color: $primary;
+    
+    margin-bottom: 30px;
+
+    translate: 0 75%;
+    opacity: 0;
+    transition: all .4s ease-in-out .6s;
+
+    @media (max-width: $md-3) {
+      @include adaptiv-value('font-size', 16, 14, 1);
+      @include adaptiv-value('margin-bottom', 30, 15, 1);
+    }
+  }
+}

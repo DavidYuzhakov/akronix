@@ -1,0 +1,47 @@
+@import '../../scss/variables';
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 45px;
+  
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(to bottom, rgba($primary, 0), rgba($primary, .8));
+    cursor: pointer;
+    border-radius: 50%;
+
+    width: 56px;
+    height: 56px;
+
+    opacity: .5;
+
+    transition: opacity .2s ease;
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: $md-4) {
+      width: 45px;
+      height: 45px;
+
+      img {
+        height: 22px;
+      }
+    }
+  }
+}
+
+.prev {
+  margin-right: 140px;
+  
+  img {
+    rotate: 180deg;
+  }
+}

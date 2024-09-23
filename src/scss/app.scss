@@ -1,0 +1,89 @@
+@import 'fonts';
+@import 'reset';
+@import 'variables';
+@import 'templates';
+@import 'mixins';
+@import 'components/all';
+
+body {
+  font-family: 'Bicubik', sans-serif;
+  font-size: 16px;
+  color: $primary;
+  background: $backround;
+
+  &.lock {
+    overflow: hidden;
+  }
+}
+
+.container {
+  max-width: calc(#{$container + px} - 30px);
+  padding: 0 15px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.wrapper {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+
+  z-index: -1;
+
+  width: 100%;    
+  
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.title {
+  line-height: 1.2;
+  color: $white;
+  letter-spacing: 8px;
+  font-weight: 400;
+  font-size: 38px;
+  text-shadow: 0 0 10px rgba($secondary, .5), 2px 2px rgba($primary, .2);
+
+  @include adaptiv-value('font-size', 38, 20, 1);
+}
+
+.btn {
+  @include adaptiv-value('padding-top', 18, 12, 1);
+  @include adaptiv-value('padding-bottom', 18, 12, 1);
+  @include adaptiv-value('padding-right', 24, 15, 1);
+  @include adaptiv-value('padding-left', 24, 15, 1);
+  @include adaptiv-value('font-size', 16, 12, 1);
+
+  border-radius: 12px;
+  border: 1px solid rgba(#2CD3FF, .51);
+  box-shadow: 0 0 20px rgba($secondary, .5);
+  background: linear-gradient(to bottom, $blue, #14B4DE);
+
+  color: $white;
+  text-shadow: 0 0 10px rgba($secondary, .5), 2px 2px rgba($primary, .2);
+  text-align: center;
+  letter-spacing: 1.6px;
+  text-wrap: nowrap;
+
+  transition: all .2s ease;
+
+  @media (hover: hover) {
+    &:hover {
+      text-shadow: 0 0 10px $white;
+      box-shadow: 0 0 0 transparent;
+    }
+  } 
+
+  &:active {
+    text-shadow: 0 0 10px $white;
+    box-shadow: 0 0 0 transparent;
+  }
+}

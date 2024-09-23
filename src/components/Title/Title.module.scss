@@ -1,0 +1,31 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.wrapper {
+  display: flex;
+  align-items: flex-end;
+}
+
+.title {
+  display: flex;
+  align-items: flex-start;
+  margin-right: 20px;
+
+  @media (max-width: $md-4) {
+    margin-right: 0;
+  }
+  h4 {
+    white-space: nowrap;
+    color: $secondary;
+    text-shadow: 0 0 10px rgba($secondary, .5), 2px -1px rgba($blue, .3);
+    padding: 0 5px;
+    line-height: 1.2;
+
+    @include adaptiv-value('font-size', 16, 14, 1);
+
+    @media (max-width: $md-4) {
+      padding: 0 2px;
+      white-space: wrap;
+    }
+  }
+}

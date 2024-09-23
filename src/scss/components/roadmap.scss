@@ -1,0 +1,254 @@
+.roadmap {
+  position: relative;
+  text-align: center;
+
+  h2 {
+    padding: 0 15px;
+  }
+   
+  &__el {
+    margin: 20px 0 65px 0;
+
+    @media (max-width: $md-3) {
+      @include adaptiv-value('margin-bottom', 65, 0, 1);
+    }
+  }
+
+  &__items {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    margin-bottom: 100px;
+
+    @media (max-width: $md-3) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    min-width: 238px;
+    max-width: 240px;
+    height: 456px;
+
+    &.locked {
+      opacity: .5;
+
+      ul {
+        filter: blur(5px);
+      }
+    }
+
+    &--left {
+      flex-direction: column-reverse;
+
+      .roadmap__arrow {
+        // margin-bottom: 66px;
+        
+        img {
+          rotate: 270deg
+        }
+      }
+
+      .roadmap__top-el {
+        top: -17px;
+        rotate: 180deg;
+      }
+
+      .roadmap__bottom {
+        bottom: -100px; 
+
+        &-el {
+          max-width: 120px;
+        }
+      }
+
+      .roadmap__content {
+        margin-bottom: 120px;
+      }
+    }
+
+    &--right {
+      .roadmap__top-el {
+        bottom: -17px;
+
+        rotate: 0deg;
+      }
+
+      .roadmap__bottom {
+        top: -100px;    
+        rotate: 180deg;   
+        &-el {
+          max-width: 120px;
+        }
+      }
+
+      .roadmap__icon {
+        rotate: 180deg;
+      }
+
+      .roadmap__content {
+        margin-top: 120px;
+      }
+    }
+  }
+
+  &__arrow {
+    width: 100%;
+
+    img {
+      rotate: 90deg; 
+    }
+  }
+
+  &__content {
+    position: relative;
+    text-align-last: left;
+    padding: 28px 20px;
+
+    background: linear-gradient(to top, rgba(7, 108, 233, 0.2), rgba(12, 18, 55, 0.2));
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+
+    @media (max-width: $md-3) {
+      padding: 20px 15px;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background: rgba(37, 48, 116, 0.3);
+      border-radius: 20px;
+      pointer-events: none;
+    }
+
+    h3 {
+      font-size: 18px;
+      font-weight: 400;
+      letter-spacing: 3px;
+
+      color: $white;
+      text-shadow: 0 0 10px rgba($secondary, .5), 2px 2px rgba($primary, .2);
+
+      margin-bottom: 20px;
+
+      @media (max-width: $md-3) {
+        font-size: 16px;
+      }
+    }
+
+    ul {
+      margin-left: 20px
+    }
+
+    li {
+      text-align: left;
+      list-style: disc;
+
+      font-size: 14px;
+      text-shadow: 0 0 10px rgba($primary, .3);
+      line-height: 1.1;
+
+      @media (max-width: $md-3) {
+        
+      }
+    }
+  }
+
+  &__top-el {
+    position: absolute;
+    left: 50%;
+    max-width: 180px;
+    translate: -50% 0;
+  }
+
+  &__bottom {
+    position: absolute; 
+    left: 50%;
+
+    translate: -50% 0;
+  }
+
+  &__icon {
+    position: absolute;
+    left: 50%;
+    top: 64px;
+
+    translate: -50%;
+
+    span {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: -1;
+      
+      translate: -50% -50%;
+      width: 50%;
+      height: 50%;
+  
+      background: $secondary;
+      border-radius: 50%;
+      filter: blur(20px)
+    }
+  }
+}
+
+
+/* Scrollbar */
+.simplebar-track.simplebar-horizontal {
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+  margin: 0 15px;
+  width: 100%;
+  max-width: 980px;
+  height: 10px;
+  margin: 0 auto;
+
+  border: 1px solid rgba($secondary, .2);
+  background: rgba($primary, .2);
+  border-radius: 4px;
+
+  cursor: grabbing;
+}
+
+.simplebar-track.simplebar-horizontal .simplebar-scrollbar {
+  position: relative;
+  height: 8px;
+
+  border: 1px solid rgba($secondary, .5);
+  background: linear-gradient(to bottom, $blue, $secondary);
+  border-radius: 4px;
+
+  &:before {
+    content: none;
+  }
+}
+
+
+.simplebar-content-wrapper {
+  background: url('../assets/images/roadmap/line.svg') no-repeat;
+  background-attachment: local;
+  background-position: calc(50% + 30px) 39%;
+  min-width: 100%;
+
+  @media (max-width: 1820px) {
+    background-position-x: 80%;
+  }
+
+  @media (max-width: $lg) {
+    background-position-x: 86%;
+  }
+
+  @media (max-width: $md-3) {
+    background-position-y: 47%;
+  }
+}

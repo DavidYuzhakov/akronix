@@ -1,0 +1,351 @@
+.tokenomic {
+  padding-bottom: 130px;
+
+  @media (max-width: $md-2) {
+    padding-bottom: 75px;
+  }
+
+  @media (max-width: $md-4) {
+    padding-bottom: 50px;
+  }
+}
+
+.tokenomic-akron {
+  position: relative;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: $md-1) {
+      padding-bottom: 30px !important;
+    }
+
+    @media (max-width: $md-2) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__img {
+    @include adaptiv-value('max-width', 688, 110, 1);
+    @media (max-width: $md-2) {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: $md-3) {
+      width: 100%;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+
+    @media (max-width: $md-2) {
+      top: 20%;
+    }
+  }
+
+  .ton-el {
+    margin: 20px 0;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &._animate {
+      .tokenomic-akron__item {
+        opacity: 1;
+        translate: 0 0;
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: stretch;
+    gap: 3px;
+    opacity: 0;
+    translate: -10% 0;
+
+    .precent {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 48px;
+
+      color: $secondary;
+      text-shadow: 0 0 10px rgba($primary, .3);
+      background: linear-gradient(to right, rgba($secondary, 0), rgba($secondary, .2));
+    }
+
+    .text {
+      display: block;
+      width: 100%;
+      max-width: 440px;
+      padding: 9px 10px;
+
+      background: linear-gradient(to left, rgba($primary, 0), rgba($primary, .2));
+      text-wrap: nowrap;
+
+      @media (max-width: $md-4) {
+        text-wrap: wrap;
+        @include adaptiv-value('font-size', 24, 12, 1);
+      }
+    }
+  }
+
+}
+
+.tokenomic-timer {
+  position: relative;
+  text-align: center;
+  @include adaptiv-value('padding-bottom', 90, 0, 1);
+
+
+  &__bg {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    max-height: 300px;
+    translate: 0 -50%;
+
+    @media (max-width: $md-3) {
+      display: none;
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .el-left, .el-right {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+      img:first-child {
+        opacity: .5;
+      }
+
+      @media (max-width: $md-3) {
+        display: none;
+      }
+    }
+    .el-right {
+      rotate: 180deg;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    text-shadow: 0 0 10px rgba($primary, .3);
+  }
+
+  &__lines {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+
+    translate: -50% -45%;
+
+    @media (max-width: $md-3) {
+      display: none;
+    }
+  }
+}
+
+.tokenomic-el {
+  display: block;
+  margin: 20px auto;
+
+  @media (max-width: $md-4) {
+    @include adaptiv-value('margin-top', 20, 10, 1);
+    @include adaptiv-value('margin-bottom', 20, 10, 1);
+  }
+}
+
+.tokenomic-purchase {
+  padding: 100px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+
+
+  @media (max-width: $md-1) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.tokenomic-articles {
+  .tokenomic-presale {
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: url('../assets/images/article-bg.png') center no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+
+    width: 100%;
+    height: 100%;
+
+    @include adaptiv-value('padding-left', 40, 20, 1);
+    @include adaptiv-value('padding-right', 40, 20, 1);
+    @include adaptiv-value('padding-top', 50, 20, 1);
+    @include adaptiv-value('padding-bottom', 50, 20, 1);
+
+    @media (max-width: $md-3) {
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    &__content {
+      h2 {
+        font-weight: 400;
+        color: $white;
+        letter-spacing: 4px;
+        text-shadow: 0 0 10px rgba($secondary, .5), 2px 2px rgba($primary, .2);
+
+
+        @include adaptiv-value('font-size', 20, 15, 1);
+        @include adaptiv-value('margin-bottom', 20, 7, 1);
+      }
+
+      p {
+        max-width: 550px;
+        color: $primary;
+        text-shadow: 0 0 10px rgba($primary, 3);
+        line-height: 1.2;
+        font-size: 14px;
+
+        @include adaptiv-value('font-size', 14, 12, 1);
+      }
+    }
+    
+    &__link {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      @media (max-width: $md-2) {
+        gap: 10px;
+      }
+
+      div {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 122px;
+        padding: 8px 20px;
+
+        background: linear-gradient(to right, rgba($primary, 0), rgba($primary, .2));
+
+        @media (max-width: $md-3) {
+          padding: 4px 8px;
+
+          img {
+            width: 50px;
+          }
+        }
+
+        @media (max-width: $md-4) {
+          width: 70px;
+        }
+      }
+
+      button {
+        position: relative;
+        background: url('../assets/icons/button-md.svg') center no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        padding: 12px 14px;
+        text-wrap: nowrap;
+
+        color: $white;
+        font-size: 16px;
+        text-shadow: 0 0 10px rgba($secondary, .5), 2px 2px rgba($primary, .3);
+
+        transition: all .2s ease;
+
+        @media (hover: hover) {
+          &:hover {
+            scale: 1.025;
+            text-shadow: 0 0 2.5px $white;
+          }
+        }
+      
+        @media (hover: none) {
+          &:active {
+            scale: 1.025;
+            text-shadow: 0 0 2.5px $white;
+          }
+        }
+
+        @media (max-width: $md-2) {
+          font-size: 14px;
+        }
+
+        @media (max-width: $md-3) {
+          padding: 14px;
+        }
+
+        @media (max-width: $md-4) {
+          padding: 8px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .tokenomic-buy {
+    text-align: center;
+    margin: 0 auto;
+    background: linear-gradient(to bottom, rgba($primary, 0), rgba($primary, .25));
+    border-radius: 20px;
+    padding-top: 50px;
+    padding-bottom: 80px;
+
+    @media (max-width: $md-2) {
+      @include adaptiv-value('padding-bottom', 80, 45, 1);
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    p {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 5px;
+      margin-bottom: 40px;
+
+      color: $secondary;
+      font-size: 20px;
+      text-shadow: 0 0 10px rgba($secondary, .5), 2px -1px rgba($blue, .3);
+
+      @media (max-width: $md-2) {
+        @include adaptiv-value('font-size', 20, 14, 1);
+        @include adaptiv-value('margin-bottom', 40, 25, 1);
+      }
+    }
+
+    .quantity {
+      text-wrap: nowrap;
+    }
+  }
+}

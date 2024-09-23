@@ -1,0 +1,77 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.card {
+  position: relative;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  width: 100%;
+  max-width: 350px;
+  height: 210px;
+  margin-top: 80px;
+  padding: 56px 35px 20px;
+  @include adaptiv-value('padding-top', 56, 30, 1);
+
+  background: linear-gradient(to top, rgba($blue, .2), rgba(#0C1237, .2));
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  opacity: 0;  
+
+  &._animate {
+    opacity: 1;
+  }
+
+
+  .top {
+    position: absolute;
+    top: -80px;
+    left: 50%;
+
+    background: url('../../assets/images/ton/currency-top.png') center no-repeat;
+    background-size: cover;
+    width: 400px;
+    height: 150px;
+
+    translate: -50% 0;
+
+    @media (max-width: $md-3) {
+      width: 375px;
+      height: 117px;
+
+      img {
+        margin-top: -10px;
+      }
+    }
+  }
+
+  .bottom {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    translate: -50% 0;
+
+    @media (max-width: $md-3) {
+      @include adaptiv-value('width', 260, 180, 1);
+      @include adaptiv-value('bottom', -25, -18, 1);
+    }
+  }
+
+  h3 {
+    font-weight: 400;
+    letter-spacing: 5px;
+    font-size: 20px;
+    color: $white;
+    text-shadow: 0 0 10px rgba($secondary, .5), 2px 2px rgba($primary, .2);
+    margin-bottom: 20px;
+  }
+
+  p {
+    line-height: 1.2;
+    font-size: 14px;
+  }
+}

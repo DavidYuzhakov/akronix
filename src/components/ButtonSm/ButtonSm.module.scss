@@ -1,0 +1,57 @@
+@import '../../scss/variables';
+
+.btn {
+  position: relative;
+  width: 110px;
+  height: 48px;
+  
+  cursor: pointer;
+  transition: all .2s ease;
+
+    @media (hover: hover) {
+      &:hover {
+        scale: 1.025;
+        text-shadow: 0 0 2.5px $white;
+      }
+    }
+  
+    @media (hover: none) {
+      &:active {
+        scale: 1.025;
+        text-shadow: 0 0 2.5px $white;
+      }
+    }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 80%;
+    height: 80%;
+
+    background: $secondary;
+    filter: blur(10px);
+
+    translate: -50% -50%;
+  }
+
+  span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+
+    color: $white;
+    text-shadow: 0 0 10px rgba($secondary, .5), 2px 2px rgba($primary, .3);
+
+    translate: -50% -50%;
+  }
+}

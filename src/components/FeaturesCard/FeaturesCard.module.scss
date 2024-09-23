@@ -1,0 +1,87 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.card {
+  position: relative;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 28px;
+  width: 100%;
+  max-width: 316px;
+  height: 300px;
+  margin: 50px 0;
+  margin-bottom: 70px;
+
+  background: linear-gradient(to top, rgba($blue, .2), rgba(#0C1237, .2));
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  opacity: 0;
+
+  &._animate {
+    opacity: 1;
+  }
+
+  @media (max-width: $md-3) {
+    @include adaptiv-value('padding', 28, 15, 1);
+    height: 275px;
+  }
+  
+  .top {
+    position: absolute;
+    top: -67px;
+    left: 0;
+
+    background: url('../../assets/images/features/head.png') center no-repeat;
+    background-size: cover;
+    width: 264px;
+    height: 110px;
+
+    @media (max-width: $md-3) {
+      @include adaptiv-value('width', 264, 240, 1);
+      @include adaptiv-value('height', 110, 100, 1);
+    }
+
+    img {
+      position: absolute;
+      top: -12px;
+      right: 65px;
+    }
+  }
+
+  .bottom {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    translate: -50% 0;
+
+    @media (max-width: $md-3) {
+      @include adaptiv-value('width', 260, 180, 1);
+      @include adaptiv-value('bottom', -25, -18, 1);
+    }
+  }
+
+  h3 {
+    font-weight: 400;
+    letter-spacing: 4px;
+    font-size: 20px;
+    color: $white;
+    line-height: 1.2;
+    text-shadow: 0 0 10px rgba($secondary, .5), 2px 2px rgba($primary, .2);
+    margin-bottom: 20px;
+
+    @media (max-width: $md-3) {
+      @include adaptiv-value('font-size', 20, 16, 1);
+    }
+  }
+
+  p {
+    line-height: 1.2;
+    font-size: 14px;
+    text-shadow: 0 0  10px rgba($primary, .3);
+  }
+}

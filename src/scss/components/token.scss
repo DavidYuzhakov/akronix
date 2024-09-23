@@ -1,0 +1,57 @@
+.token-text {
+  max-width: 1075px;
+}
+
+.token-name {
+  font-size: 14px;
+  text-shadow: 0 0 10px rgba($primary, .3);
+  margin-bottom: 10px;
+}
+
+.token-btn {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  padding: 12px 20px;
+  
+  background: linear-gradient(to bottom, rgba($primary, 0), rgba($primary, .3));
+  border-bottom: 1px solid $primary;
+
+  @media (max-width: $md-3) {
+    @include adaptiv-value('padding-top', 12, 7, 1);
+    @include adaptiv-value('padding-bottom', 12, 7, 1);
+    @include adaptiv-value('padding-left', 20, 10, 1);
+    @include adaptiv-value('padding-right', 20, 10, 1);
+  }
+
+  img{
+    margin-left: 20px;
+    translate: 0 0;
+    transition: translate .2s ease;
+
+    @media (max-width: $md-3) {
+      @include adaptiv-value('margin-left', 20, 5, 1);
+      @include adaptiv-value('width', 21, 15, 1)
+    }
+  }
+
+  div, span {
+    @include adaptiv-value('font-size', 14, 12, 1);
+    color: $white;
+    text-shadow: 2px -1px rgba($blue, .2);
+  }
+
+  div {
+    @media (max-width: $md-3) {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      @include adaptiv-value('max-width', 600, 170, 1);
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover img{
+      translate: 5px 0;
+    }
+  }
+}

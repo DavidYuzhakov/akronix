@@ -1,0 +1,51 @@
+@import '../../scss/variables';
+
+.bar {
+  width: 300px;
+  margin-bottom: 10px;
+
+  @media (max-width: $md-4) {
+    width: 100%;
+  }
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+
+  span {
+    color: $white;
+    font-size: 14px;
+    text-shadow: 2px -1px rgba($blue, .2);
+  }
+}
+
+.label {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  color: $secondary;
+  font-size: 14px;
+  text-shadow: 2px -1px rgba($blue, .2);
+}
+
+.line {
+  position: relative;
+  height: 4px;
+  background: rgba(#0C1237, .3);
+  border-radius: 4px;
+
+  width: 100%;
+
+  span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    height: 4px;
+    border-radius: 4px;
+  }
+}

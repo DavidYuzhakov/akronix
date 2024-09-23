@@ -1,0 +1,193 @@
+.ton {
+  position: relative;
+  padding-top: 140px;
+  padding-bottom: 230px;
+
+  @include adaptiv-value('padding-top', 140, 50, 1);
+  @include adaptiv-value('padding-bottom', 230, 120, 1);
+  
+  &-reference {
+    padding-bottom: 0;
+
+    @media (max-width: $md-4) {
+      padding-top: 0;
+    }
+
+    .ton-bg {
+      @media (max-width: $md-4) {
+        scale: 1.2;
+        top: -10px;
+        left: 0;
+      }
+    }
+  }
+
+  &-container {
+    position: relative;
+  }
+
+  &-bg {
+    position: absolute;
+    top: -340px;
+    right: -21%;
+    pointer-events: none;
+
+    width: 100%;
+    max-width: 1250px;
+
+    overflow: hidden;
+
+    @media (max-width: $md-2) {
+      @include adaptiv-value('top', -340, -100, 1)
+    }
+
+    @media (max-width: $md-4) {
+      position: relative;
+      top: -40px;
+      left: 0;
+
+      scale: 1.5;
+    }
+  }
+
+  &-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    @media (max-width: $md-4) {
+      display: none;
+    }
+  }
+}
+
+.ton-content {
+  position: relative;
+  width: 100%;
+  max-width: 585px;
+  margin-bottom: 100px;
+
+  &._animate {
+    h2, .ton-text, .ton-el {
+      translate: 0 0;
+      opacity: 1;
+    }
+  }
+
+  h2 {
+    translate: 0 50%;
+    opacity: 0;
+    transition: all .4s ease-in-out;
+  }
+
+  @media (max-width: $md-2) {
+    max-width: 450px;
+  }
+
+  @media (max-width: $md-3) {
+    h2 {
+      position: relative;
+      z-index: 1;
+    }
+
+    @include adaptiv-value('margin-bottom', 100, 50, 1)
+  }
+
+  .ton-el {
+    margin: 20px 0;
+    opacity: 0;
+    translate: -50% 0;
+    transition: all .4s ease-in-out .3s;
+
+    @media (max-width: $md-3) {
+      @include adaptiv-value('width', 194, 140, 1)
+    }
+
+    @media (max-width: $md-4) {
+      margin: 10px 0;
+    }
+  }
+
+  .ton-text {
+    line-height: 1.2;
+    color: $secondary;
+
+    margin-bottom: 24px;
+
+    opacity: 0;
+    translate: 0 50%;
+    transition: all .4s ease-in-out .6s;
+
+    @media (max-width: $md-3) {
+      @include adaptiv-value('font-size', 16, 14, 1);
+      @include adaptiv-value('margin-bottom', 24, 10, 1);
+    }
+
+    span {
+      display: block;
+      margin-bottom: 20px;
+      color: $primary;
+    }
+  }
+
+  button {
+    padding: 12px 25px;
+    
+    background: linear-gradient(to bottom, rgba($primary, 0), rgba($primary, .3));
+    text-shadow: 2px -1px rgba($blue, .2);
+
+    img:last-child {
+      margin-left: 45px;
+      translate: 0 0;
+      transition: translate .2s ease;
+    }
+
+    @media (hover: hover) {
+      &:hover img:last-child {
+        translate: 5px 0;
+      }
+    }
+
+    @media (max-width: $md-3) {
+      @include adaptiv-value('padding-top', 12, 5, 1);
+      @include adaptiv-value('padding-bottom', 12, 5, 1);
+      @include adaptiv-value('padding-right', 25, 10, 1);
+      @include adaptiv-value('padding-left', 25, 10, 1);
+
+      img:first-child {
+        @include adaptiv-value('width', 177, 130, 1)
+      }
+    }
+  }
+}
+
+.ton-project {
+  &__line {
+    background: linear-gradient(to right, $secondary, rgba($blue, 0));
+    height: 2px;
+    width: 100%;
+
+    @media (max-width: $md-4) {
+      display: none;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+
+    margin-top: 50px;
+
+    @media (max-width: $md-1) {
+      justify-content: center;
+    }
+
+    @media (max-width: $md-2) {
+      justify-content: center;
+    }
+  }
+}
