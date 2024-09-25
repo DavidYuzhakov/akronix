@@ -4,8 +4,11 @@ import xIcon from "../assets/icons/x.svg"
 import logo from "../assets/images/logo.png"
 import el from "../assets/images/footer/el.svg"
 import bg from "../assets/images/footer/bg.png"
+import { useTranslation } from "react-i18next"
 
 export function Footer () {
+  const { t } = useTranslation()
+
   function handleScrollTo(e, id) {
     e.preventDefault()
     
@@ -61,7 +64,7 @@ export function Footer () {
         </nav>
         <div className="footer__copyright">
         ©Copyright 2024 akronix. All Rights Reserved.
-        <a href="">пользовательское соглашение</a>
+        <a href="">{ t('footer.agreement') }</a>
         </div>
       </div>
     </footer>

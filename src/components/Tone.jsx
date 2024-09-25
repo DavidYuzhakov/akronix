@@ -7,23 +7,25 @@ import arrow from "../assets/images/ton/arrow-right.svg"
 import { CardCurrency } from "./CardCurrency"
 import { Title } from "./Title"
 import { useInView } from "react-intersection-observer"
+import { useTranslation } from "react-i18next"
 
 export function Tone ({ cards }) {
+  const { t } = useTranslation()
   const {ref, inView} = useInView({
     threshold: .5,
     triggerOnce: true
   })
-
+  
   return (
     <div className='ton'>
       <div className="container ton-container">
         <img className="ton-bg" src={robotImg} alt="robot" />
         <div ref={ref} className={`ton-content ${inView ? '_animate' : ''}`}>
-          <h2 className="title">основано на блокчейне тон</h2>
+          <h2 className="title">{ t('ton.title') }</h2>
           <img className="ton-el" src={elImg} alt="" />
           <p className="ton-text">
-            <span>oбъеденить разные аудитории и познакомить людей, которые только приходят в криптовалюту с веб 3 геймингом</span>
-            для корректной работы с блокчейном рекомендуем использовать кошелек Tonkeeper
+            <span>{t('ton.text.first')}</span>
+            {t('ton.text.second')}
           </p>
           <button>
             <img src={tonkeeper} alt="tonkeeper" />
@@ -31,9 +33,15 @@ export function Tone ({ cards }) {
           </button>
         </div>
         <div className="ton-project">
-          <Title text={'3 основные валюты проекта:'} />
+          <Title text={t('ton.paragraph')} />
           <div className="ton-project__cards">
-            {cards.length > 0 && cards.map((card, index) => <CardCurrency key={card.title} {...card} index={index + 1} />)}
+            {cards.length > 0 && cards.map((card, index) => <CardCurrency 
+              key={t(`ton.cards.${index}.title`)} 
+              title={t(`ton.cards.${index}.title`)} 
+              text={t(`ton.cards.${index}.text`)} 
+              {...card} 
+              index={index + 1} 
+            />)}
           </div>
         </div>
       </div>

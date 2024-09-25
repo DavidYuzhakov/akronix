@@ -4,25 +4,25 @@ import wpLines from '../assets/images/whitepaper/lines.svg'
 import linesBg from '../assets/images/whitepaper/block-lines.svg'
 
 import { ButtonSm } from "./ButtonSm"
+import { useTranslation } from 'react-i18next'
 
 export function WhitePaper() {
+  const { t } = useTranslation()
+
   return (
     <div id="whitepaper" className="whitepaper">
       <div className="container">
         <div className="whitepaper__container">
           <div className="whitepaper-wrapper">
             <div className="whitepaper__content">
-              <h2>Ознакомьтесь с нашим официальным white paper</h2>
+              <h2>{ t('whitepaper.title') }</h2>
               <div className="whitepaper__img">
                 <img src={wpImg} alt="whitepaper" />
               </div>
-              <p>
-                pdf файл содержит в себе более подробную информацию о платформе
-                akronix, токене и функционале
-              </p>
+              <p>{ t('whitepaper.text') }</p>
               <div>
-                <ButtonSm text={'открыть'} />
-                <a href="#">скачать(15mb)</a>
+                <ButtonSm text={ t('whitepaper.button') } />
+                <a href="#">{ t('whitepaper.download') }</a>
               </div>
             </div>
           </div>

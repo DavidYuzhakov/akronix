@@ -8,8 +8,10 @@ import hp from "../assets/icons/hp.svg"
 import recharge from "../assets/icons/recharge.svg"
 
 import { StatBar } from "./StatBar";
+import { useTranslation } from "react-i18next";
 
 export function Nft ({ characters }) {
+  const { t } = useTranslation()
   const [currentId, setCurrentId] = useState(1)
   const character = characters.find(item => item.id === currentId)
 
@@ -50,13 +52,13 @@ export function Nft ({ characters }) {
           <img className="nft-info__img" src={arrow} alt="" />
           <div className="nft-info__content">
             <h3>{ character.name }</h3>
-            <p>боевые показатели:</p>
+            <p>{ t('nft.paragraph' ) }</p>
             <div className="nft-info__properties">
               {character && (
                 <>
-                  <StatBar width={(character.damage / 100) * 100} value={`${character.damage} ед`} icon={damage} colors={['#FF7801', '#FF9501']} label={'урон:'} />
-                  <StatBar width={(character.recharge / 8) * 100} value={`+${character.recharge}%/мин`} icon={recharge} colors={['#6C17FF', '#A50CFE']} label={'перезарядка:'} />
-                  <StatBar width={(parseFloat(character.hp) / 100.000) * 100} value={character.hp} icon={hp} colors={['#DD1440', '#FF2835']} label={'здоровье:'} />
+                  <StatBar width={(character.damage / 100) * 100} value={`${character.damage} ед`} icon={damage} colors={['#FF7801', '#FF9501']} label={t('nft.performance.0')} />
+                  <StatBar width={(character.recharge / 8) * 100} value={`+${character.recharge}%/мин`} icon={recharge} colors={['#6C17FF', '#A50CFE']} label={t('nft.performance.1')} />
+                  <StatBar width={(parseFloat(character.hp) / 100.000) * 100} value={character.hp} icon={hp} colors={['#DD1440', '#FF2835']} label={t('nft.performance.2')} />
                 </>
               )}
             </div>

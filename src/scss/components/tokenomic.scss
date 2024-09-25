@@ -272,9 +272,8 @@
         position: relative;
         background: url('../assets/icons/button-md.svg') center no-repeat;
         background-size: cover;
-        width: 100%;
-        height: 100%;
-        padding: 12px 14px;
+        width: 250px;
+        height: 46px;
         text-wrap: nowrap;
 
         color: $white;
@@ -282,6 +281,10 @@
         text-shadow: 0 0 10px rgba($secondary, .5), 2px 2px rgba($primary, .3);
 
         transition: all .2s ease;
+
+        @include adaptiv-value('width', 250, 170, 1);
+        @include adaptiv-value('height', 46, 31, 1);
+        @include adaptiv-value('font-size', 16, 11, 1);
 
         @media (hover: hover) {
           &:hover {
@@ -295,19 +298,6 @@
             scale: 1.025;
             text-shadow: 0 0 2.5px $white;
           }
-        }
-
-        @media (max-width: $md-2) {
-          font-size: 14px;
-        }
-
-        @media (max-width: $md-3) {
-          padding: 14px;
-        }
-
-        @media (max-width: $md-4) {
-          padding: 8px;
-          font-size: 12px;
         }
       }
     }

@@ -404,13 +404,16 @@
     li {
       display: flex;
       align-items: center;
-      flex-wrap: wrap;
 
       font-size: 14px;
       color: $secondary;
       cursor: pointer;
 
       text-shadow: 2px -1px rgba($blue, .2);
+
+      @media (min-width: $md-2) {
+        flex-wrap: wrap;
+      }
 
       &:first-child:after {
         content: "";

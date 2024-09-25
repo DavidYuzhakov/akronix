@@ -27,9 +27,9 @@
     letter-spacing: 2px;
     text-shadow: 2px 2px rgba($primary, .3);
 
-    @include adaptiv-value('width', 250, 150, 1);
-    @include adaptiv-value('height', 58, 35, 1);
-    @include adaptiv-value('font-size', 20, 12, 1);
+    @include adaptiv-value('width', 270, 150, 1);
+    @include adaptiv-value('height', 63, 35, 1);
+    @include adaptiv-value('font-size', 19, 10, 1);
 
     transition: all .2s ease;
 

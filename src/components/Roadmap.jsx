@@ -1,17 +1,20 @@
+import SimpleBar from 'simplebar-react'
+import { useTranslation } from 'react-i18next'
+
 import el from '../assets/icons/block-el.svg'
 import arrowImg from '../assets/icons/arrow-double.svg'
 import topEl from '../assets/images/ton/currency-bottom.svg'
 import bottomEl from '../assets/images/roadmap/el.png'
-import SimpleBar from 'simplebar-react'
-
 import 'simplebar-react/dist/simplebar.min.css'
 
 export function Roadmap({ steps }) {
+  const { t } = useTranslation()
+
   return (
     <div id="roadmap" className="roadmap">
       <h2 className="title">
         roadmap <br />
-        наше пошаговое развитие
+        { t('roadmap.title') }
       </h2>
       <img className="roadmap__el" src={el} alt="" />
       <SimpleBar>
@@ -33,10 +36,10 @@ export function Roadmap({ steps }) {
                   </div>
                   <div className="roadmap__content">
                     <img className="roadmap__top-el" src={topEl} alt="" />
-                    <h3>{step.title}</h3>
+                    <h3>{ t(`roadmap.info.${index}.title`) }</h3>
                     <ul>
                       {step.details.map((detail, idx) => (
-                        <li key={idx}>{detail}</li>
+                        <li key={idx}>{ t(`roadmap.info.${index}.details.${idx}`) }</li>
                       ))}
                     </ul>
                     <div className="roadmap__bottom">

@@ -5,8 +5,11 @@ import arrow from "../../assets/images/ton/arrow-right.svg"
 import styles from "./TransList.module.scss"
 import { Title } from "../Title"
 import { useInView } from "react-intersection-observer"
+import { useTranslation } from "react-i18next"
 
 export function TransList ({ transactions }) {
+  const { t } = useTranslation()
+
   const {ref, inView} = useInView({
     threshold: .1,
     triggerOnce: true
@@ -14,7 +17,7 @@ export function TransList ({ transactions }) {
 
   return (
     <div className={styles.wrapper}>
-      <Title text={'последние транзакции'} />
+      <Title text={t('tokenomic.form.paragraph')} />
       <div ref={ref} className={`${styles.list} ${inView ? styles._animate : ''}`}>
         {transactions.slice(0, 15).map((transaction, i) => (
           <div 

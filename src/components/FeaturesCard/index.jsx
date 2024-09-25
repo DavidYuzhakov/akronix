@@ -2,7 +2,7 @@ import styles from "./FeaturesCard.module.scss"
 import bottomImg from "../../assets/images/ton/currency-bottom.svg"
 import { useInView } from "react-intersection-observer"
 
-export function FeaturesCard ({ title, text, id, index }) {
+export function FeaturesCard ({ title, text, index }) {
   const {ref, inView} = useInView({
     threshold: .3,
     triggerOnce: true
@@ -17,7 +17,7 @@ export function FeaturesCard ({ title, text, id, index }) {
       }}
     >
       <div className={styles.top}>
-        <img src={`/akronix/features/${id}.svg`} alt="icon" />
+        <img src={`/akronix/features/${index}.svg`} alt="icon" />
       </div>
       <h3>{ title }</h3>
       <p>{ text }</p>

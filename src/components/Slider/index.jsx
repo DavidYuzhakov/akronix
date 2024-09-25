@@ -10,8 +10,10 @@ import { SlideCard } from '../SlideCard';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { useTranslation } from 'react-i18next';
 
 export function Slider ({ slides }) {
+  const { t } = useTranslation()
   const sliderRef = useRef(null);
 
   const handlePrev = useCallback(() => {
@@ -44,7 +46,10 @@ export function Slider ({ slides }) {
     >
       {slides.map((slide, i) => (
         <SwiperSlide key={i}>
-          <SlideCard {...slide} />
+          <SlideCard text={t(`games.slides.${i}.text`)} btnText={t(`games.slides.${i}.btnText`)} {...slide} title={{
+            first: t(`games.slides.${i}.title.first`),
+            second: t(`games.slides.${i}.title.second`)
+          }} />
         </SwiperSlide>
       ))}
       <div className={styles.buttons}>

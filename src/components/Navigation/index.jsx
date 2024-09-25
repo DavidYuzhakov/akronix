@@ -12,6 +12,7 @@ import xIcon from '../../assets/icons/x.svg'
 import menu from '../../assets/images/header/menu.svg'
 import close from '../../assets/images/header/close.svg'
 import { useInView } from 'react-intersection-observer'
+import { useTranslation } from 'react-i18next'
 
 const list = [
   { name: 'rus', img: rusImg },
@@ -23,6 +24,7 @@ export function Navigation() {
     threshold: 1,
     triggerOnce: true
   })
+  const { i18n, t } = useTranslation()
 
   const [prevScrollPos, setPrevScrollPos] = useState(0)
   const [visible, setVisible] = useState(true)
@@ -37,6 +39,12 @@ export function Navigation() {
     } else {
       setLang(name)
       setOpen(false)
+      setOpenNav(false)
+
+      i18n.changeLanguage(name)
+      const searchParams = new URLSearchParams(window.location.search)
+      searchParams.set('lang', name)
+      window.history.replaceState(null, '', `?${searchParams.toString()}`)
     }
   }
 
@@ -81,6 +89,15 @@ export function Navigation() {
     }
   }, [openNav])
 
+  useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search)
+    const langFromUrl = searchParams.get('lang')
+    if (langFromUrl) {
+      i18n.changeLanguage(langFromUrl)
+      setLang(langFromUrl)
+    }
+  }, [i18n])
+
   return (
     <header
       ref={ref}
@@ -111,28 +128,28 @@ export function Navigation() {
           `}>
             <ul>
               <li onClick={(e) => handleScrollTo(e, 'about')}>
-                <a href="#">о проекте</a>
+                <a href="#">{ t('nav.0') }</a>
               </li>
               <li onClick={(e) => handleScrollTo(e, 'nft')}>
-                <a href="#">nft</a>
+                <a href="#">{ t('nav.1') }</a>
               </li>
               <li onClick={(e) => handleScrollTo(e, 'games')}>
-                <a href="#">игры</a>
+                <a href="#">{ t('nav.2') }</a>
               </li>
               <li onClick={(e) => handleScrollTo(e, 'reference')}>
-                <a href="#">рефералам</a>
+                <a href="#">{ t('nav.3') }</a>
               </li>
               <li onClick={(e) => handleScrollTo(e, 'akron-token')}>
-                <a href="#">токен akron</a>
+                <a href="#">{ t('nav.4') }</a>
               </li>
               <li onClick={(e) => handleScrollTo(e, 'whitepaper')}>
-                <a href="#">вайтпаппер</a>
+                <a href="#">{ t('nav.5') }</a>
               </li>
               <li onClick={(e) => handleScrollTo(e, 'roadmap')}>
-                <a href="#">роадмап</a>
+                <a href="#">{ t('nav.6') }</a>
               </li>
               <li className={styles.disabled}>
-                <a href="#">мастерская</a>
+                <a href="#">{ t('nav.7') }</a>
               </li>
             </ul>
           </div>

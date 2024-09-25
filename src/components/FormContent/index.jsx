@@ -11,8 +11,10 @@ import passed from '../../assets/icons/check.svg'
 import arrow from '../../assets/images/tokenomic/nft/arrow.svg'
 
 import { nft } from '../../data'
+import { useTranslation } from 'react-i18next'
 
 export function FormContent({ balance }) {
+  const { t } = useTranslation()
   const reference = 'https://www.youtube.com/watch?v=EpglImt321'
   const myScore = 750
 
@@ -65,31 +67,31 @@ export function FormContent({ balance }) {
           onClick={() => setActiveTab('buy')}
           className={`${styles.tab} ${styles.buy} ${activeTab === 'buy' ? styles.active : ''}`}
         >
-          купить
+          { t('tokenomic.form.nft.0.tab') }
         </div>
         <div
           onClick={() => tabHandler('claim')}
           className={`${styles.tab} ${styles.claim} ${activeTab === 'claim' ? styles.active : ''}`}
         >
-          CLAIM
+          { t('tokenomic.form.nft.1.tab') }
         </div>
         <div
           onClick={() => tabHandler('partner')}
           className={`${styles.tab} ${styles.partner} ${activeTab === 'partner' ? styles.active : ''}`}
         >
-          Партнерка
+           { t('tokenomic.form.nft.2.tab') }
         </div>
         <div
           onClick={() => tabHandler('nft')}
           className={`${styles.tab} ${styles.nft} ${activeTab === 'partner' ? styles.active : ''}`}
         >
-          nft
+           { t('tokenomic.form.nft.3.tab') }
         </div>
       </div>
       {activeTab === 'buy' &&
         <div className={styles.buy}>
           <fieldset>
-            <legend className={styles.text}>Выберите валюту обмена:</legend>
+            <legend className={styles.text}>{ t('tokenomic.form.nft.0.paragraph') }</legend>
             <label
               className={`${styles.currency} ${
                 currency === 'usdt' ? styles.active : ''
@@ -113,8 +115,8 @@ export function FormContent({ balance }) {
           </fieldset>
           <div className={styles.inputField}>
             <label htmlFor="amount">
-              <span>{currency} вы платите:</span>
-              <span>БАЛАНС: {balance}</span>
+              <span>{currency} { t('tokenomic.form.nft.0.inputAmount.label') }</span>
+              <span>{ t('tokenomic.form.nft.0.inputAmount.paragraph') } {balance}</span>
             </label>
             <input
               id="amount"
@@ -125,8 +127,8 @@ export function FormContent({ balance }) {
           </div>
           <div className={styles.inputField}>
             <label htmlFor="akron">
-              <span>AKRON вы получаете:</span>
-              <button type="button">макс.</button>
+              <span>AKRON { t('tokenomic.form.nft.0.inputAkron.label') }</span>
+              <button type="button">{ t('tokenomic.form.nft.0.inputAkron.paragraph') }</button>
             </label>
             <input
               id="akron"
@@ -135,36 +137,36 @@ export function FormContent({ balance }) {
             />
           </div>
           <button className={'btn'} type="submit">
-            Подключить кошелек
+            { t('tokenomic.form.nft.0.button') }
           </button>
         </div>
       }
       {activeTab === 'claim' &&
         <div className={styles.claim}>
-          <p className={styles.text}>всего вы получите</p>
+          <p className={styles.text}>{ t('tokenomic.form.nft.1.paragraph') }</p>
           <h3>12345.67 akron</h3>
           <ul className={styles.list}>
             <li>
               <div>
-                <span>Объем разлока:</span>
-                <span>125 дней</span>
+                <span>{ t('tokenomic.form.nft.1.list.0.type') }</span>
+                <span>125 { t('tokenomic.timer.days')}</span>
               </div>
             </li>
             <li>
               <div>
-                <span>До разлока:</span>
+                <span>{ t('tokenomic.form.nft.1.list.1.type') }</span>
                 <span>12:55:34:12</span>
               </div>
             </li>
             <li>
               <div>
-                <span>Ежемесячный разлок:</span>
+                <span>{ t('tokenomic.form.nft.1.list.2.type') }</span>
                 <span>4567 AKRON</span>
               </div>
             </li>
             <li>
               <div>
-                <span>всего разлочено:</span>
+                <span>{ t('tokenomic.form.nft.1.list.3.type') }</span>
                 <span>482398.43 akron</span>
               </div>
             </li>
@@ -174,7 +176,7 @@ export function FormContent({ balance }) {
       }
       {activeTab === 'partner' &&
         <div className={styles.partner}>
-          <p className={styles.text}>ваша партнерская ссылка:</p>
+          <p className={styles.text}>{ t('tokenomic.form.nft.2.paragraph') }</p>
           <div className={`${styles.inputField} ${styles.field}`}>
             <input
               value={reference}
@@ -187,25 +189,25 @@ export function FormContent({ balance }) {
           <ul className={styles.list}>
             <li>
               <div>
-                <span>Всего партнеров:</span>
+                <span>{ t('tokenomic.form.nft.2.list.0.type') }</span>
                 <span>123456</span>
               </div>
             </li>
             <li>
               <div>
-                <span>Партнеры инвестировали:</span>
+                <span>{ t('tokenomic.form.nft.2.list.1.type') }</span>
                 <span>$1234567.86</span>
               </div>
             </li>
           </ul>
           <div className={styles.info}>
             <div className={styles.card}>
-              <h5>вы заработали:</h5>
+              <h5>{ t('tokenomic.form.nft.2.cards.0.title') }</h5>
               <p>12347.24 ton</p>
               <p>1234.34 usdt</p>
             </div>
             <div className={styles.card}>
-              <h5>доступно для клема:</h5>
+              <h5>{ t('tokenomic.form.nft.2.cards.1.title') }</h5>
               <p>124.56 ton</p>
               <p>2759.99 usdt</p>
             </div>
@@ -215,14 +217,14 @@ export function FormContent({ balance }) {
       }
       {activeTab === 'info' &&
         <div className={styles.information}>
-          <p className={styles.text}>вы не подключили кошелек:</p>
-          <button onClick={() => setActiveTab('buy')} className='btn' type='button'>подключить кошелек</button>
+          <p className={styles.text}>{ t('tokenomic.form.nft.4.text') }</p>
+          <button onClick={() => setActiveTab('buy')} className='btn' type='button'>{ t('tokenomic.form.nft.4.button') }</button>
         </div>
       }
       {activeTab === 'nft' && 
         <div className={styles.nft}>
           <div className={styles.nftTop}>
-            <legend>ваша прогресс бонусных NFT:</legend>
+            <legend>{ t('tokenomic.form.nft.3.paragraph') }</legend>
             <div className={styles.switch}>
               <label className={isUsdt ? styles.active : ''}>
                 <img src={usdt} alt="usdt" />
@@ -261,11 +263,11 @@ export function FormContent({ balance }) {
           </div>
           <div className={styles.info}>
             <div className={styles.card}>
-              <h5>вы инвестировали:</h5>
+              <h5>{ t('tokenomic.form.nft.3.cards.0.title') }</h5>
               <p>340.56 ton</p>
             </div>
             <div className={styles.card}>
-              <h5>до след. NFT:</h5>
+              <h5>{ t('tokenomic.form.nft.3.cards.1.title') }</h5>
               <p>760.56 ton</p>
             </div>
           </div>

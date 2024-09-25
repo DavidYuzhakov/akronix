@@ -5,8 +5,10 @@ import playImg from "../assets/icons/play.svg"
 
 import { Button } from "./Button"
 import { useInView } from 'react-intersection-observer'
+import { useTranslation } from "react-i18next"
 
 export function Intro () {
+  const { t } = useTranslation()
   const { ref, inView } = useInView({
     threshold: .1,
     triggerOnce: true
@@ -19,7 +21,7 @@ export function Intro () {
         <img className={`intro__character`} src={character} alt="character" />
         <div className={`intro__content`}>
           <h1>the stars legacy</h1>
-          <Button notAnimate text={'join game now'} />
+          <Button notAnimate text={t('intro.button')} />
         </div>
       </div>
       <div className="video">

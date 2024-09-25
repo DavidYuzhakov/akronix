@@ -1,0 +1,272 @@
+{
+  "nav": [
+    "Akronix",
+    "nft",
+    "games",
+    "partnership",
+    "akron coin",
+    "White Paper",
+    "roadmap",
+    "workshop"
+  ],
+  "intro": {
+    "button": "join game now"
+  },
+  "about": {
+    "head": {
+      "title": "gaming crypto universe akronix"
+    },
+    "title": {
+      "first": "Enjoy",
+      "second": "play and earn"
+    },
+    "text": "Akronix is a crypto gaming universe built on the play-to-earn principle. Akronix contains many games of different genres, connected by one plot",
+    "paragraph": "Confrontation between good and evil",
+    "text-quote": "Jedi and Sith, republics and empires in various game variations and plots will become a passion for a wide range of audiences, from avid gamers to those who like to spend their free time playing their favorite games"
+  },
+  "ton": {
+    "title": "based on the TON",
+    "paragraph": "The 3 main currencies of the project:",
+    "text": {
+      "first": "unite different audiences and introduce people who are just coming to cryptocurrency to web3 gaming",
+      "second": "For correct work with the blockchain, we recommend using the Tonkeeper wallet"
+    },
+    "cards": [
+      {
+        "title": "credits",
+        "text": "in-game currency, earn in games and use for upgrades and exchange"
+      },
+      {
+        "title": "akron coin",
+        "text": "native token of the Akronix platform, providing a variety of functions and features and used for all internal transactions on the platform."
+      },
+      {
+        "title": "ton coin",
+        "text": "utility token used to purchase NFTs"
+      }
+    ]
+  },
+  "nft": {
+    "head": {
+      "title": "Hire your NFT character"
+    },
+    "title": {
+      "first": "let's go",
+      "second": "into battle with your character"
+    },
+    "text": "list of NFT characters currently available for purchase",
+    "paragraph": "Combat performance:",
+    "performance": [
+      "damage:",
+      "recharge:",
+      "hp:"
+    ]
+  },
+  "banner": {
+    "title": "Improve your equipment, upgrade your weapons and earn more credits",
+    "text": "Play, engage in battles with Vader himself, prove yourself a master of space battles and earn money with AKRONIX"
+  },
+  "games": {
+    "paragraph": "games available on the platform:",
+    "slides": [
+      {
+        "title": {
+          "first": "Space ",
+          "second": "battle"
+        },
+        "text": "Become a star fleet commander and fight other players, use your tactical skills in exciting space battles!",
+        "btnText": "play"
+      },
+      {
+        "title": { "first": "Fight with", "second": "Darth Vader" },
+        "text": "Challenge the darkest lord. Arm yourself with blasters and have an epic battle, show your skills and prove that darkness is not omnipotent!",
+        "btnText": "play"
+      },
+      {
+        "title": { "first": "battle for", "second": "Naboo" },
+        "text": "Lead your team of heroes and show your tactical mastery in exciting MOBA battles, where every decision brings you closer to victory!",
+        "btnText": "soon"
+      },
+      {
+        "title": { "first": "Fight with", "second": "Darth Vader" },
+        "text": "Challenge the darkest lord. Arm yourself with blasters and have an epic battle, show your skills and prove that darkness is not omnipotent!",
+        "btnText": "play"
+      }
+    ],
+    "title": "game integration with unity",
+    "text": "Thanks to the capabilities of the unity engine, we were able to integrate all the advantages of 3D visualization, the beauty of graphics and features of the Gameplay and all 3D features into Acronix and made it possible to launch cool 3D games directly from Telegram"
+  },
+  "reference": {
+    "head": {
+      "title": "your Power is in Unity"
+    },
+    "title": {
+      "first": "Invite",
+      "second": "play and earn"
+    },
+    "text": "On Akronix, you can invite your friends and get rewards for it!",
+    "text-quote": "Jedi and Sith, republics and empires in various game variations and plots will become a passion for a wide range of audiences, from avid gamers to those who like to spend their free time playing their favorite games"
+  },
+  "title": "clan system",
+  "text": {
+    "first": "Clans are an important and exciting aspect of the Akronix cryptocurrency gaming platform",
+    "second": "Clans offer players the opportunity to band together, create communities, and work together to achieve gameplay goals. Clans in Akronix add additional depth to gameplay by providing team battles, shared missions, and unique clan bonuses."
+  },
+  "token": {
+    "head": {
+      "title": "game token AKRON"
+    },
+    "title": {
+      "first": "this is basic",
+      "second": "akronix platform element"
+    },
+    "text": "Akron on the TON network provides many functions and features and is used for all internal transactions on the akronix gaming platform",
+    "text-quote": "With its unique characteristics and advantages, AKRON contributes to the development of a decentralized gaming ecosystem, making it more innovative, secure and economically sustainable. The liquidity and popularity of the token is further supported by the interest and turnover of funds within all products of the Arkonix ecosystem.",
+    "paragraph": "akron token address:"
+  },
+  "features": {
+    "paragraph": "Benefits of using AKRON:",
+    "cards": [
+      {
+        "title": "Safety and speed",
+        "text": "The decentralized TON Network ensures high transaction speed and token security, making AKRON fast and reliable to use."
+      },
+      {
+        "title": "Low fees",
+        "text": "Transactions on the TON network have low fees, allowing users to effectively use the AKRON token for small and frequent transactions."
+      },
+      {
+        "title": "Integration with projects",
+        "text": "AKRON can be easily integrated with other projects and platforms running on the TON network, expanding its functionality and applicability."
+      },
+      {
+        "title": "ecosystem development",
+        "text": "Active use of AKRON contributes to the growth and development of the Akronix gaming platform, attracting new users and developers"
+      }
+    ]
+  },
+  "tokenomic": {
+    "title": "tokenomics akron",
+    "list": [
+      { "text": "DEX and CEX Listings" },
+      { "text": "Team Award" },
+      { "text": "Development and Marketing" },
+      { "text": "Distribution to funds and investors" },
+      { "text": "Rewards for Tournaments and Clans" },
+      { "text": "Liquidity for Profit Payment" }
+    ],
+    "timer": {
+      "title": "last chance to buy akron:",
+      "paragraph": "until the end of presale:",
+      "days": "days",
+      "hours": "hours",
+      "minutes": "minutes",
+      "seconds": "seconds"
+    },
+    "form": {
+      "paragraph": "latest transactions",
+      "head": {
+        "suptitle": "akron presale",
+        "title": "purchase form"
+      },
+      "title": {
+        "first": "",
+        "second": "raised"
+      },
+      "text": "For correct work with the blockchain, we recommend using the Tonkeeper wallet",
+      "nft": [
+        {
+          "tab": "buy",
+          "paragraph": "Select exchange currency:",
+          "inputAmount": {
+            "label": "you pay:",
+            "paragraph": "balance: "
+          },
+          "inputAkron": {
+            "label": "you get:",
+            "paragraph": "max."
+          },
+          "button": "connect"
+        },
+        {
+          "tab": "CLAIM",
+          "paragraph": "total you will receive",
+          "list": [
+            { "type": "Unlock volume:" },
+            { "type": "before unlocking:" },
+            { "type": "Monthly unlock:" },
+            { "type": "Total unlocked:" }
+          ]
+        },
+        {
+          "tab": "partnership",
+          "paragraph": "your affiliate link:",
+          "list": [
+            { "type": "Total partners:" },
+            { "type": "Partners invested:" }
+          ],
+          "cards": [
+            { "title": "you earned:" },
+            { "title": "claim available:" }
+          ]
+        },
+        {
+          "tab": "nft",
+          "paragraph": "Your bonus NFT progress:",
+          "cards": [
+            { "title": "you invested:" },
+            { "title": "until the next NFT:" }
+          ]
+        },
+        {
+          "text": "you didn't  connected your wallet:",
+          "button": "connect a wallet"
+        }
+      ]
+    },
+    "presale": {
+      "title": "Don't miss the akron token presale!",
+      "text": "The Akron token presale is a unique opportunity for investors of all levels to enter the Akronix ecosystem at the start. The Play-to-Earn platform with high growth potential is open to anyone who wants to be part of the future of decentralized gaming",
+      "button": "presale page",
+      "paragraph": "total capitalization:"
+    }
+  },
+  "whitepaper": {
+    "title": "Check out our official white paper",
+    "text": "pdf file contains more detailed information about the akronix platform, token and functionality",
+    "button": "open",
+    "download": "download(15mb)"
+  },
+  "roadmap": {
+    "title": "is our step-by-step development",
+    "info": [
+      {
+        "title": "October 2024",
+        "details": ["Akronix Community Development", "Akron Presale Launch"]
+      },
+      {
+        "title": "January 2025",
+        "details": ["Launching games on the platform", "Listing on DEX exchanges"]
+      },
+      {
+        "title": "February 2025",
+        "details": ["Listing on CEX tier-2, tier-1", "Launch of Akronix Workshop"]
+      },
+      {
+        "title": "March 2025",
+        "details": ["Launch of MOBA Battle for NABU"]
+      },
+      {
+        "title": "May 2025",
+        "details": ["Game Developers Academy on Akronix Platform"]
+      },
+      {
+        "title": "June 2025",
+        "details": ["???????????????", "?????????", "????????????"]
+      }
+    ]
+  },
+  "footer": {
+    "agreement": "user agreement"
+  }
+}

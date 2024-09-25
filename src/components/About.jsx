@@ -7,20 +7,22 @@ import xIcon from "../assets/icons/x.svg"
 import dexIcon from "../assets/icons/dextool.svg"
 import stonefiIcon from "../assets/icons/stonefi.svg"
 import { useInView } from "react-intersection-observer"
+import { useTranslation } from "react-i18next"
 
 export function About () {
   const { ref, inView } = useInView({ threshold: 1, triggerOnce: true })
+  const { t } = useTranslation()
   
   return (
     <>
       <div className="about-title">
         <img src={quoteLeft} alt="quote" />
-        <h5>Противостояние добра и зла</h5>
+        <h5>{ t('about.paragraph') }</h5>
         <img src={quoteRight} alt="quote" />
       </div>
       <div className="about-text">
         <img src={quoteText} alt="qutoe" />
-        <p>джедаев и ситхов, республики и империи в различных игровых вариациях и сюжетах станут увлечением широких масс аудитории, от заядлых геймеров до любителей провести свободные минуты за любимыми играми.</p>
+        <p>{ t('about.text-quote') }</p>
         <img src={quoteText} alt="qutoe" />
       </div>
       <div ref={ref} className={`about-social ${inView ? '_animate' : ''}`}>

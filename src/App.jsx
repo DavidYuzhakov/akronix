@@ -23,9 +23,12 @@ import aboutBg from './assets/images/about-bg.png'
 import nftBg from './assets/images/nft-bg.png'
 import quoteText from './assets/icons/quote-text.svg'
 
-import { akronList, cards, characters, features, roadmapData } from './data'
+import { akronList, cards, characters, roadmapData } from './data'
+import { useTranslation } from 'react-i18next'
 
 function App() {
+  const { t } = useTranslation()
+
   return (
     <div className="wrapper">
       <LayoutBg />
@@ -33,12 +36,10 @@ function App() {
       <Intro />
       <Block
         id={'about'}
-        title={{ first: 'Наслаждайся', second: 'игрой и зарабатывай' }}
+        title={{ first: t('about.title.first'), second: t('about.title.second') }}
         suptitle={'play-to-ern'}
-        titleHeader={'игровая криптовселенная akronix'}
-        text={
-          'Akronix это игровая криптовселенная, построенная на принципе play-to-earn. Akronix содержит в себе множество игр разных жанров, связанных одним сюжетом.'
-        }
+        titleHeader={t('about.head.title')}
+        text={t('about.text')}
         img={aboutBg}
       >
         <About />
@@ -46,10 +47,10 @@ function App() {
       <Tone cards={cards} />
       <Block
         id={'nft'}
-        title={{ first: 'отправляйся', second: 'в бой со своим персонажем' }}
-        suptitle={'nft characters '}
-        titleHeader={'Найми своего NFT-персонажа'}
-        text={'список NFT-персонажей доступных на данный момент для минта.'}
+        title={{ first: t('nft.title.first'), second: t('nft.title.second') }}
+        suptitle={'nft characters'}
+        titleHeader={t('nft.head.title')}
+        text={t('nft.text')}
         img={nftBg}
       >
         <Nft characters={characters} />
@@ -58,37 +59,31 @@ function App() {
       <Games />
       <Block
         id={'reference'}
-        title={{ first: 'Приглашайте', second: 'Друзей и сражайся вместе' }}
-        titleHeader={'ваша Сила в Единстве'}
+        title={{ first: t('reference.title.first'), second: t('reference.title.second')}}
+        titleHeader={t('reference.head.title')}
         suptitle={'referral program'}
-        text={
-          'На Akronix вы можете приглашать своих друзей и получать за это вознаграждения! '
-        }
+        text={t('reference.text')}
       >
         <div className="about-text">
           <img src={quoteText} alt="qutoe" />
           <p>
-            джедаев и ситхов, республики и империи в различных игровых вариациях
-            и сюжетах станут увлечением широких масс аудитории, от заядлых
-            геймеров до любителей провести свободные минуты за любимыми играми.
+            {t('reference.text-quote')}
           </p>
           <img src={quoteText} alt="qutoe" />
         </div>
-        <Button text={'invite frient'} />
+        <Button text={'invite friend'} />
       </Block>
       <Reference />
       <Akron />
       <Block
-        title={{ first: 'это ключевой', second: 'элемент платформы akronix' }}
-        text={
-          'Akron на сети TON, обеспечивает множество функций и возможностей и используется для всех внутренних транзакций на игровой площадке akronix'
-        }
-        titleHeader={'игровой Токен AKRON'}
+        title={{ first: t('token.title.first'), second: t('token.title.second') }}
+        text={t('token.text')}
+        titleHeader={t('token.head.title')}
         suptitle={'our main token'}
       >
         <Token />
       </Block>
-      <Features features={features} />
+      <Features />
       <Tokenomic akronList={akronList} />
       <WhitePaper />
       <Roadmap steps={roadmapData} />
