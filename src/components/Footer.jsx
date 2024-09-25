@@ -36,28 +36,28 @@ export function Footer () {
         <nav className="footer__nav">
         <ul>
               <li onClick={(e) => handleScrollTo(e, 'about')}>
-                <a href="#">о проекте</a>
+                <a href="#">{ t('nav.0') }</a>
               </li>
               <li onClick={(e) => handleScrollTo(e, 'nft')}>
-                <a href="#">nft</a>
+                <a href="#">{ t('nav.1') }</a>
               </li>
               <li onClick={(e) => handleScrollTo(e, 'games')}>
-                <a href="#">игры</a>
+                <a href="#">{ t('nav.2') }</a>
               </li>
               <li onClick={(e) => handleScrollTo(e, 'reference')}>
-                <a href="#">рефералам</a>
+                <a href="#">{ t('nav.3') }</a>
               </li>
               <li onClick={(e) => handleScrollTo(e, 'akron-token')}>
-                <a href="#">токен akron</a>
+                <a href="#">{ t('nav.4') }</a>
               </li>
               <li onClick={(e) => handleScrollTo(e, 'whitepaper')}>
-                <a href="#">White Paper</a>
+                <a href="#">{ t('nav.5') }</a>
               </li>
               <li onClick={(e) => handleScrollTo(e, 'roadmap')}>
-                <a href="#">роадмап</a>
+                <a href="#">{ t('nav.6') }</a>
               </li>
               <li className={'disabled'}>
-                <a href="#">мастерская</a>
+                <a href="#">{ t('nav.7') }</a>
               </li>
             </ul>
           <img src={el} alt="" />
