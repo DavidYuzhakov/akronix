@@ -57,9 +57,9 @@
     "text": "list of NFT characters currently available for purchase",
     "paragraph": "Combat performance:",
     "performance": [
-      "damage:",
-      "recharge:",
-      "hp:"
+      {"type": "damage:", "measure": "units"},
+      {"type": "recharge:", "measure": "min"},
+      {"type": "hp:"}
     ]
   },
   "banner": {
