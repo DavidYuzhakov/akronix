@@ -105,7 +105,8 @@
       "second": "play and earn"
     },
     "text": "On Akronix, you can invite your friends and get rewards for it!",
-    "text-quote": "Jedi and Sith, republics and empires in various game variations and plots will become a passion for a wide range of audiences, from avid gamers to those who like to spend their free time playing their favorite games"
+    "text-quote": "Jedi and Sith, republics and empires in various game variations and plots will become a passion for a wide range of audiences, from avid gamers to those who like to spend their free time playing their favorite games",
+    "button": "invite friend"
   },
   "title": "clan system",
   "text": {
@@ -228,6 +229,7 @@
       "title": "Don't miss the akron token presale!",
       "text": "The Akron token presale is a unique opportunity for investors of all levels to enter the Akronix ecosystem at the start. The Play-to-Earn platform with high growth potential is open to anyone who wants to be part of the future of decentralized gaming",
       "button": "presale page",
+      "button-buy": "buy akron",
       "paragraph": "total capitalization:"
     }
   },

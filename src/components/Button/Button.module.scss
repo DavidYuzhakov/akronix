@@ -29,7 +29,7 @@
 
     @include adaptiv-value('width', 270, 150, 1);
     @include adaptiv-value('height', 63, 35, 1);
-    @include adaptiv-value('font-size', 19, 10, 1);
+    @include adaptiv-value('font-size', 18, 10, 1);
 
     transition: all .2s ease;
 

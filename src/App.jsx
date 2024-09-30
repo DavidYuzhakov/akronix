@@ -71,7 +71,7 @@ function App() {
           </p>
           <img src={quoteText} alt="qutoe" />
         </div>
-        <Button text={'invite friend'} />
+        <Button text={t('reference.button')} />
       </Block>
       <Reference />
       <Akron />

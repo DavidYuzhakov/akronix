@@ -72,13 +72,13 @@ export function Tokenomic({ akronList }) {
               <img height={100} src={quote} alt="" />
               <img src={quote} alt="" />
             </div>
+            <img className="tokenomic-timer__bg" src={patternBg} alt="" />
+            <img className="tokenomic-timer__lines" src={linesBg} alt="" />
           </div>
           <p className="tokenomic-timer__text">
             {t('tokenomic.timer.paragraph')}
           </p>
         </div>
-        <img className="tokenomic-timer__bg" src={patternBg} alt="" />
-        <img className="tokenomic-timer__lines" src={linesBg} alt="" />
       </div>
       <div className="container">
         <div className="tokenomic-purchase">
@@ -114,7 +114,7 @@ export function Tokenomic({ akronList }) {
               </span>
               <img src={quoteRight} alt="quote" />
             </p>
-            <Button text={'buy akron'} />
+            <Button text={t('tokenomic.presale.button-buy')} />
           </div>
         </div>
       </div>
