@@ -81,8 +81,7 @@ export const cards = [
 export const slides = [
   { imgId: 2 },
   { imgId: 1 },
-  { imgId: 3 },
-  { imgId: 1 },
+  { imgId: 3 }
 ]
 
 export const nft = [

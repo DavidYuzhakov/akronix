@@ -36,7 +36,7 @@ export function Nft({ characters }) {
                 <img
                   height={120}
                   width={84}
-                  src={`/akronix/nft/${!item.locked ? item.id : 'coming'}.png`}
+                  src={`/nft/${!item.locked ? item.id : 'coming'}.png`}
                   alt="character"
                 />
                 <span className={item.id === currentId ? 'active' : ''} />
@@ -45,7 +45,7 @@ export function Nft({ characters }) {
           </div>
         </div>
         <div className="nft-card">
-          <img src={`/akronix/nft/${currentId}.png`} alt="" />
+          <img src={`/nft/${currentId}.png`} alt="" />
           <span />
         </div>
         <div className="nft-info">

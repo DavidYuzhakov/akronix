@@ -97,7 +97,9 @@ export function Tokenomic({ akronList }) {
               <div>
                 <img src={arrows} alt="arrows" />
               </div>
-              <button>{ t('tokenomic.presale.button') }</button>
+              <a href="https://presale.akronix.io">
+                <button>{ t('tokenomic.presale.button') }</button>
+              </a>
             </div>
 
             <img className="el el-tl" src={elArticle} alt="" />

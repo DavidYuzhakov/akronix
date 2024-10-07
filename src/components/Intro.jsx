@@ -21,7 +21,7 @@ export function Intro () {
         <img className={`intro__character`} src={character} alt="character" />
         <div className={`intro__content`}>
           <h1>the stars legacy</h1>
-          <Button notAnimate text={t('intro.button')} />
+          <Button link={'https://t.me/akronix_bot'} notAnimate text={t('intro.button')} />
         </div>
       </div>
       <div className="video">

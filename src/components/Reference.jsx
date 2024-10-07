@@ -11,7 +11,6 @@ export function Reference () {
   }) 
 
   return (
-    <>
     <div className='ton ton-reference'>
       <div className="container ton-container">
         <img className="ton-bg" src={refImg} alt="robot" />
@@ -25,6 +24,5 @@ export function Reference () {
         </div>
       </div>
     </div>
-    </>
   )
 }

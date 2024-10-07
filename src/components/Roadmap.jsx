@@ -45,7 +45,7 @@ export function Roadmap({ steps }) {
                     <div className="roadmap__bottom">
                       <img className="roadmap__bottom-el" src={bottomEl} alt="" />
                       <div className="roadmap__icon">
-                        <img src={`/akronix/roadmap/${step.icon}`} alt="icon" />
+                        <img src={`/roadmap/${step.icon}`} alt="icon" />
                         <span></span>
                       </div>
                     </div>

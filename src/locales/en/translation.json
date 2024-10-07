@@ -184,7 +184,7 @@
             "paragraph": "balance: "
           },
           "inputAkron": {
-            "label": "you get:",
+            "label": "you receive:",
             "paragraph": "max."
           },
           "button": "connect"

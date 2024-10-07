@@ -71,7 +71,7 @@ function App() {
           </p>
           <img src={quoteText} alt="qutoe" />
         </div>
-        <Button text={t('reference.button')} />
+        <Button link={'https://t.me/akronix_bot'} text={t('reference.button')} />
       </Block>
       <Reference />
       <Akron />

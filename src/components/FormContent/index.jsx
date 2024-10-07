@@ -256,7 +256,7 @@ export function FormContent({ balance }) {
                   <div className={styles.el}>
                     <img src={myScore > card.score ? passed : notPassed} alt="" />
                   </div>
-                  <img className={styles.char} src={`/akronix/nft/${card.id}.png`} alt="character" />
+                  <img className={styles.char} src={`/nft/${card.id}.png`} alt="character" />
                 </div>
               </div>
             ))}

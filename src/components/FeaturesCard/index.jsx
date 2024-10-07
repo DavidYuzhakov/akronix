@@ -17,7 +17,7 @@ export function FeaturesCard ({ title, text, index }) {
       }}
     >
       <div className={styles.top}>
-        <img src={`/akronix/features/${index}.svg`} alt="icon" />
+        <img src={`/features/${index}.svg`} alt="icon" />
       </div>
       <h3>{ title }</h3>
       <p>{ text }</p>

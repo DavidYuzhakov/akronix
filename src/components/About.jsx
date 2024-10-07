@@ -26,19 +26,19 @@ export function About () {
         <img src={quoteText} alt="qutoe" />
       </div>
       <div ref={ref} className={`about-social ${inView ? '_animate' : ''}`}>
-        <a href="#">
+        <a href="https://t.me/akronix_p2e">
           <img src={tgIcon} alt="telegram" />
         </a>
-        <a href="#">
+        <a href="https://youtube.com/@akronix_legacy">
           <img src={ytIcon} alt="youtube" />
         </a>
-        <a href="#">
+        <a href="https://x.com/akronix_p2e">
           <img src={xIcon} alt="x" />
         </a>
-        <a href="#">
+        <a href="https://x.com/akronix_p2e">
           <img src={dexIcon} alt="dextool" />
         </a>
-        <a href="#">
+        <a href="https://x.com/akronix_p2e">
           <img src={stonefiIcon} alt="stonefi" />
         </a>
       </div>
