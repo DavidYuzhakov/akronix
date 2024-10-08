@@ -166,7 +166,7 @@
     },
     "form": {
       "paragraph": "latest transactions",
-      "warn_text": "The list of transactions is empty",
+      "warn_text": "There are no transactions",
       "head": {
         "suptitle": "akron presale",
         "title": "purchase form"
