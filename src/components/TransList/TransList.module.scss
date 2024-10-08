@@ -2,7 +2,7 @@
 @import '../../scss/mixins';
 
 .wrapper {
-  max-width: 100%;
+  width: 100%;
   @media (min-width: $md-1) {
     margin-top: -50px;
   }
@@ -20,7 +20,6 @@
 .item {
   display: flex;
   gap: 5px;
-  width: 100%;
 
   opacity: 0;
 
@@ -58,6 +57,7 @@
 
 .right {
   display: flex;
+  flex-grow: 1;
   justify-content: space-between;
   align-items: center;
   padding: 11px 20px;

@@ -1,16 +1,23 @@
 import styles from './BuyTab.module.scss'
 import usdt from '../../assets/icons/usdt.svg'
 import ton from '../../assets/icons/ton.svg'
+import disconnect from '../../assets/icons/disconnect.svg'
+
 import { useForm } from '../../context/FormContext'
 import { useAuth } from '../../context/AuthContext'
 import { useTranslation } from 'react-i18next'
+import { useTonConnectUI } from '@tonconnect/ui-react'
 
 export function BuyTab () {
   const { t } = useTranslation()
-  const { isAuth } = useAuth()
+  const [tonConnectUI] = useTonConnectUI()
+  const { isAuth, logout } = useAuth()
   const { updateAmount, balance, amount, setAmount, akron, currency, setCurrency } = useForm()
 
-  console.log(balance)
+  async function disconnectHandler () {
+    await tonConnectUI.disconnect()
+    logout()
+  }
 
   return (
     <div className={styles.buy}>
@@ -66,6 +73,14 @@ export function BuyTab () {
       <button className={'btn'} type="submit">
         {isAuth ? t('tokenomic.form.tabs.0.button.0') : t('tokenomic.form.tabs.0.button.1')}
       </button>
+
+      {isAuth && <button 
+        className={styles.disconnect} type='button'
+        onClick={disconnectHandler}
+        title='disconnect wallet'
+      >
+        <img width={25} src={disconnect} alt="disconnect" />
+      </button>}
     </div>
   )
 }

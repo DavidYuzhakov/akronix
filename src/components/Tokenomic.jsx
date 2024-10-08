@@ -16,16 +16,29 @@ import { Form } from './Form'
 import { TransList } from './TransList'
 import { Button } from './Button'
 
-import { transactions } from '../data'
 import { useInView } from 'react-intersection-observer'
 import { useTranslation } from 'react-i18next'
+import { useForm } from '../context/FormContext'
 
 export function Tokenomic({ akronList }) {
   const { t } = useTranslation()
+  const { infoPresale } = useForm()
   const { ref, inView } = useInView({
     threshold: 0.5,
     triggerOnce: false,
   })
+
+  function scrollToForm(e) {
+    e.preventDefault()
+    
+    const block = document.getElementById('form')
+    if (block) {
+      window.scrollTo({
+        top: block.getBoundingClientRect().top + window.scrollY - document.querySelector('header').offsetHeight,
+        behavior: 'smooth'
+      })
+    }
+  }
 
   return (
     <section className="tokenomic">
@@ -67,7 +80,7 @@ export function Tokenomic({ akronList }) {
               <img height={100} src={quote} alt="" />
               <img src={quote} alt="" />
             </div>
-            <Timer targetTime={new Date('2024-08-18T10:00:00')} />
+            <Timer targetTime={new Date(infoPresale.remain_time)} />
             <div className="el-right">
               <img height={100} src={quote} alt="" />
               <img src={quote} alt="" />
@@ -83,7 +96,7 @@ export function Tokenomic({ akronList }) {
       <div className="container">
         <div className="tokenomic-purchase">
           <Form />
-          <TransList transactions={transactions} />
+          <TransList />
         </div>
       </div>
       <div className="tokenomic-articles">
@@ -116,7 +129,9 @@ export function Tokenomic({ akronList }) {
               </span>
               <img src={quoteRight} alt="quote" />
             </p>
-            <Button text={t('tokenomic.presale.button-buy')} />
+            <div onClick={scrollToForm}>
+              <Button text={t('tokenomic.presale.button-buy')} />
+            </div>
           </div>
         </div>
       </div>

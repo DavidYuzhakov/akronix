@@ -54,24 +54,6 @@ export const akronList = [
   { precent: 52 },
 ]
 
-export const transactions = [
-  { type: 'ton', value: 123.45, link: 'x850R6Cmmn0ZZbMUmGbxy0soaM3tX4NHtpk...' },
-  { type: 'usdt', value: 123.45, link: 'x850R6Cmmn0ZZbMUmGbxy0soaM3tX4NHtpk...' },
-  { type: 'ton', value: 123.45, link: 'x850R6Cmmn0ZZbMUmGbxy0soaM3tX4NHtpk...' },
-  { type: 'usdt', value: 123.45, link: 'x850R6Cmmn0ZZbMUmGbxy0soaM3tX4NHtpk...' },
-  { type: 'ton', value: 123.45, link: 'x850R6Cmmn0ZZbMUmGbxy0soaM3tX4NHtpk...' },
-  { type: 'usdt', value: 123.45, link: 'x850R6Cmmn0ZZbMUmGbxy0soaM3tX4NHtpk...' },
-  { type: 'ton', value: 123.45, link: 'x850R6Cmmn0ZZbMUmGbxy0soaM3tX4NHtpk...' },
-  { type: 'usdt', value: 123.45, link: 'x850R6Cmmn0ZZbMUmGbxy0soaM3tX4NHtpk...' },
-  { type: 'ton', value: 123.45, link: 'x850R6Cmmn0ZZbMUmGbxy0soaM3tX4NHtpk...' },
-  { type: 'usdt', value: 123.45, link: 'x850R6Cmmn0ZZbMUmGbxy0soaM3tX4NHtpk...' },
-  { type: 'ton', value: 123.45, link: 'x850R6Cmmn0ZZbMUmGbxy0soaM3tX4NHtpk...' },
-  { type: 'usdt', value: 123.45, link: 'x850R6Cmmn0ZZbMUmGbxy0soaM3tX4NHtpk...' },
-  { type: 'ton', value: 123.45, link: 'x850R6Cmmn0ZZbMUmGbxy0soaM3tX4NHtpk...' },
-  { type: 'usdt', value: 123.45, link: 'x850R6Cmmn0ZZbMUmGbxy0soaM3tX4NHtpk...' },
-  { type: 'ton', value: 123.45, link: 'x850R6Cmmn0ZZbMUmGbxy0soaM3tX4NHtpk...' },
-]
-
 export const cards = [
   { icon: creditsIcon },
   { icon: akronIcon },

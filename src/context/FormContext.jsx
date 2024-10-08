@@ -13,6 +13,7 @@ export function FormProvider ({ children }) {
   const [userInfo, setUserInfo] = useState({})
   const [isCopied, setIsCopied] = useState(false)
   const [currency, setCurrency] = useState('usdt')
+  const [infoPresale, setInfoPresale] = useState({})
 
   function updateAmount(e) {
     const value = e.target.value
@@ -35,11 +36,11 @@ export function FormProvider ({ children }) {
     setTimeout(() => {
       setIsCopied(false)
     }, 1500)
-    navigator.clipboard.writeText(reference)
+    navigator.clipboard.writeText(userInfo.invite_link)
   }
 
   return (
-    <FormContext.Provider value={{ updateAmount, amount, setAmount, fetchUserInfo, fetchGetBalance, balance, akron, setAkron, userInfo, currency, setCurrency, copyHandler, isCopied }}>
+    <FormContext.Provider value={{ updateAmount, amount, setAmount, fetchUserInfo, fetchGetBalance, balance, akron, setAkron, userInfo, currency, setCurrency, copyHandler, isCopied, infoPresale, setInfoPresale }}>
       { children }
     </FormContext.Provider>
   )

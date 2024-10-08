@@ -11,6 +11,7 @@ import { useProofApi } from '../../hooks/useProofApi'
 import { useAuth } from '../../context/AuthContext'
 import useTonConnect from '../../hooks/useTonConnect'
 import { useTonConnectUI } from '@tonconnect/ui-react'
+import { useForm } from '../../context/FormContext'
 
 export function Form() {
   const { t } = useTranslation()
@@ -18,8 +19,7 @@ export function Form() {
   const TonConnect = useTonConnect()
   const { isAuth, setIsAuth } = useAuth()
   const [tonConnectUI] = useTonConnectUI()
-
-  const [infoPresale, setInfoPresale] = useState({})
+  const { infoPresale, setInfoPresale } = useForm()
 
   useEffect(() => {
     async function fetchInfo () {
@@ -53,7 +53,7 @@ export function Form() {
 
 
   return (
-    <div className={styles.block}>
+    <div className={styles.block} id='form'>
       <div className={styles.head}>
         <p>{ t('tokenomic.form.head.suptitle') }</p>
         <h4>
