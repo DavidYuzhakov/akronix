@@ -22,7 +22,7 @@ export function WhitePaper() {
               <p>{ t('whitepaper.text') }</p>
               <div>
                 <ButtonSm text={ t('whitepaper.button') } />
-                <a href="#">{ t('whitepaper.download') }</a>
+                <a href={t('whitepaper.link')}>{ t('whitepaper.download') }</a>
               </div>
             </div>
           </div>

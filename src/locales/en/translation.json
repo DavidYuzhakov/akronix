@@ -175,7 +175,7 @@
         "second": "raised"
       },
       "text": "For correct work with the blockchain, we recommend using the Tonkeeper wallet",
-      "nft": [
+      "tabs": [
         {
           "tab": "buy",
           "paragraph": "Select exchange currency:",
@@ -187,7 +187,7 @@
             "label": "you receive:",
             "paragraph": "max."
           },
-          "button": "connect"
+          "button": ["buy akron", "connect"]
         },
         {
           "tab": "CLAIM",
@@ -237,7 +237,8 @@
     "title": "Check out our official white paper",
     "text": "pdf file contains more detailed information about the akronix platform, token and functionality",
     "button": "open",
-    "download": "download(15mb)"
+    "download": "download(15mb)",
+    "link": "https://presale.akronix.io/WhitePaper_en.pdf"
   },
   "roadmap": {
     "title": "is our step-by-step development",

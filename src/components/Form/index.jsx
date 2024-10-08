@@ -6,11 +6,51 @@ import el from '../../assets/icons/block-el.svg'
 import lines from '../../assets/images/tokenomic/lines-price.svg'
 import { FormContent } from "../FormContent"
 import { useTranslation } from 'react-i18next'
+import { useEffect, useState } from 'react'
+import { useProofApi } from '../../hooks/useProofApi'
+import { useAuth } from '../../context/AuthContext'
+import useTonConnect from '../../hooks/useTonConnect'
+import { useTonConnectUI } from '@tonconnect/ui-react'
 
 export function Form() {
   const { t } = useTranslation()
-  const price = 0.1234567
-  const balance = 12345.67
+  const ProofApi = useProofApi()
+  const TonConnect = useTonConnect()
+  const { isAuth, setIsAuth } = useAuth()
+  const [tonConnectUI] = useTonConnectUI()
+
+  const [infoPresale, setInfoPresale] = useState({})
+
+  useEffect(() => {
+    async function fetchInfo () {
+      const info = await ProofApi.getPresaleInfo()
+      setInfoPresale(info) 
+    }
+    fetchInfo()
+
+    const subscribe = setInterval(() => {
+      fetchInfo()
+    }, 20000);
+
+    return () => clearInterval(subscribe)
+  }, [])
+
+  useEffect(() => {
+    if (isAuth) {
+      TonConnect.fetchAuthUser()
+    } else if (tonConnectUI.connected) {
+      tonConnectUI.disconnect()
+    }
+  }, [isAuth])
+
+  useEffect(() => {
+    if (localStorage.getItem('token') && tonConnectUI.connected) {
+      setIsAuth(true)
+    } else {
+      setIsAuth(false)
+    }
+  })
+
 
   return (
     <div className={styles.block}>
@@ -23,15 +63,19 @@ export function Form() {
         </h4>
       </div>
       <h2>
-        { t('tokenomic.form.title.first') } <br /> { t('tokenomic.form.title.second') } $500 000
+        { t('tokenomic.form.title.first') } <br /> { t('tokenomic.form.title.second') } ${infoPresale.current_amount * infoPresale.price } 
       </h2>
       <img className={styles.el} src={el} alt="" />
       <div className={styles.fragment}>
         <img src={lines} alt="" />
-        <span className={styles.price}>1 akron = ${price}</span>
+        <span className={styles.price}>1 akron = ${infoPresale.price}</span>
         <img src={lines} alt="" />
       </div>
-      <FormContent balance={balance} />
+      <FormContent 
+        available={infoPresale.max_amount * infoPresale.price - infoPresale.current_amount * infoPresale.price}
+        price={infoPresale.price} 
+        tonPrice={infoPresale.ton_price}
+      />
       <p className={styles.text}>{ t('tokenomic.form.text') }</p>
     </div>
   )
