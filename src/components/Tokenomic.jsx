@@ -89,7 +89,7 @@ export function Tokenomic({ akronList }) {
             <img className="tokenomic-timer__lines" src={linesBg} alt="" />
           </div>
           <p className="tokenomic-timer__text">
-            {t('tokenomic.timer.paragraph')}
+            {infoPresale.presale_started === true ? t('tokenomic.timer.paragraph') : t('tokenomic.timer.paragraph_start')}
           </p>
         </div>
       </div>

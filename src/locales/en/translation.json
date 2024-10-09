@@ -159,6 +159,7 @@
     "timer": {
       "title": "last chance to buy akron:",
       "paragraph": "until the end of presale:",
+      "paragraph_start": "until the start of presale:",
       "days": "days",
       "hours": "hours",
       "minutes": "minutes",
