@@ -10,13 +10,13 @@ export function Token () {
   const [isCopied, setIsCopied] = useState(false)
   const token = 'EQA9IwEJ9djs2VnWTdwNCTUqW8qb-ESKFbpNlNS8Wg5yQB2u';
 
-  function copyHandler () {ы
+  function copyHandler () {
     setIsCopied(true)
 
     setTimeout(() => {
       setIsCopied(false)
     }, 2000)
-    avigator.clipboard.writeText(token)
+    navigator.clipboard.writeText(token)
   }
 
   return (
@@ -28,8 +28,7 @@ export function Token () {
       </div>
       <p className="token-name">{ t('token.paragraph')}</p>
       <button onClick={copyHandler} className="token-btn">
-        <div>{token.slice(0, -3)}</div>
-        <span>{token.slice(-3)}</span>
+        <span>{token.slice(0, 20)}...{token.slice(-3)}</span>
         <img width={23} height={23} src={isCopied ? copied :arrow} alt="arrow" />
       </button>
     </>
