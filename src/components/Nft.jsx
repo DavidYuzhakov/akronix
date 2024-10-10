@@ -83,7 +83,7 @@ export function Nft({ characters }) {
           </div>
         </div>
       </div>
-      <Button text={'mint your nft'} />
+      <Button text={'soon'} />
     </>
   )
 }
