@@ -27,10 +27,12 @@ export function Tone ({ cards }) {
             <span>{t('ton.text.first')}</span>
             {t('ton.text.second')}
           </p>
-          <button>
-            <img src={tonkeeper} alt="tonkeeper" />
-            <img src={arrow} alt="arrow" />
-          </button>
+          <a href="https://tonkeeper.com">
+            <button>
+              <img src={tonkeeper} alt="tonkeeper" />
+              <img src={arrow} alt="arrow" />
+            </button>
+          </a>
         </div>
         <div className="ton-project">
           <Title text={t('ton.paragraph')} />
