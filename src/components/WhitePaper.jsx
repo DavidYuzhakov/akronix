@@ -21,7 +21,9 @@ export function WhitePaper() {
               </div>
               <p>{ t('whitepaper.text') }</p>
               <div>
-                <ButtonSm text={ t('whitepaper.button') } />
+                <a href={t('whitepaper.link')}> 
+                  <ButtonSm text={ t('whitepaper.button') } />
+                </a>
                 <a href={t('whitepaper.link')}>{ t('whitepaper.download') }</a>
               </div>
             </div>
