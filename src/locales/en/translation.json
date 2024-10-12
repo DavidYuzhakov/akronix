@@ -273,5 +273,24 @@
   },
   "footer": {
     "agreement": "user agreement"
+  },
+  "alert": {
+    "buy": {
+      "handler": [
+        "Invalid total amount",
+        "Insufficient funds, please top up your balance"
+      ],
+      "availabel": "Exceeded the allowable number of tokens",
+      "success": "Transaction sent successfully",
+      "error": "Failed to complete the transaction, please try again later"
+    },
+    "partner": {
+      "success": "Claim rewards successfully completed",
+      "error": "Failed to complete the claim rewards, please try again later"
+    },
+    "nft": {
+      "success": "Claim NFT successfully completed",
+      "error": "Failed to complete the claim NFT, please try again later"
+    }
   }
 }

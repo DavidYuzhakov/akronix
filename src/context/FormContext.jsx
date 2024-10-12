@@ -27,7 +27,6 @@ export function FormProvider ({ children }) {
   }
   async function fetchGetBalance() {
     const balance = await ProofApi.getBalance()
-    console.log(balance)
     setBalance(balance)
   }
 

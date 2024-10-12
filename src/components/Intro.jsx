@@ -23,7 +23,6 @@ export function Intro () {
   }
 
   function closeModal (e) {
-    console.log(e.target)
     if (!e.target.closest('.video')) {
       setShowVideo(false)
       document.body.classList.remove('lock')
