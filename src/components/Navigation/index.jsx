@@ -98,6 +98,12 @@ export function Navigation() {
     }
   }, [i18n])
 
+  useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search)
+    searchParams.set('lang', lang)
+    window.history.replaceState(null, '', `?${searchParams.toString()}`)
+  }, [])
+
   return (
     <header
       ref={ref}
