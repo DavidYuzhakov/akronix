@@ -67,8 +67,8 @@ export const slides = [
 ]
 
 export const nft = [
-  { id: 1, score: 150 },
-  { id: 2, score: 250 },
-  { id: 3, score: 1000 },
-  { id: 4, score: 5000 },
+  { id: 1, score: [50, 250] },
+  { id: 2, score: [150, 750] },
+  { id: 3, score: [500, 2500] },
+  { id: 4, score: [1000,5000] },
 ]

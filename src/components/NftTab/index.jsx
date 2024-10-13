@@ -53,7 +53,7 @@ export function NftTab() {
             <img src={arrow} alt="arrow" />
             <div className={styles.content}>
               <div className={styles.score}>
-                {isUsdt ? card.score.usdt : card.score.ton}
+                {isUsdt ? card.score[1] : card.score[0]}
               </div>
               <div className={styles.el}>
                 <img
@@ -75,8 +75,8 @@ export function NftTab() {
           <h5>{ t('tokenomic.form.tabs.3.cards.0.title') }</h5>
           <p>
             {isUsdt
-              ? userInfo.user_info.amount_usdt
-              : userInfo.user_info.amount_tons}{' '}
+              ? userInfo.user_info.amount_usdt + userInfo.user_info.amount_closed_usdt
+              : userInfo.user_info.amount_tons  + userInfo.user_info.amount_closed_tons}{' '}
             {isUsdt ? 'usdt' : 'ton'}
           </p>
         </div>
