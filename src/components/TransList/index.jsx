@@ -32,7 +32,7 @@ export function TransList () {
               <span>{ transaction.amount } { transaction.is_ton ? 'ton' : 'usdt' }</span>
             </div>
             <div className={styles.right}>
-              <a className={styles.token} target="_blank"  href={"https://tonviewer.com/transaction/" + transaction.hash}>{ transaction.hash }</a>
+              <a className={styles.token} target="_blank"  href={"https://tonviewer.com/transaction/" + transaction.hash}>{ transaction.hash.substring(0, 30) }...</a>
               <a href={"https://tonviewer.com/transaction/" + transaction.hash} target="_blank"><img src={arrow} alt="arrow" /></a>
             </div>
           </div>

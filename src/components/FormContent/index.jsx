@@ -28,6 +28,7 @@ export function FormContent({ available, price, tonPrice }) {
     fetchGetBalance,
     fetchUserInfo,
     userInfo,
+    infoPresale
   } = useForm()
 
   const [activeTab, setActiveTab] = useState('buy')
@@ -51,6 +52,8 @@ export function FormContent({ available, price, tonPrice }) {
       if (!isAuth) {
         await TonConnect.fetchGenPayload()
       } else {
+        if(infoPresale.presale_started === false)
+          return;
         const limits = currency === 'ton' ? [0.5, 5000] : [5, 25000]
         const amountInUsd = buyHandler(currency, ...limits)
         if (available < amountInUsd) {
@@ -93,7 +96,7 @@ export function FormContent({ available, price, tonPrice }) {
         }
       }
     } else if (type === 'nft') {
-      if (userInfo.nft_info.claimed_nfts.some((nft) => nft)) {
+      if (userInfo.can_claim_nft === true) {
         const txFillInfo = await ProofApi.getTxFill({
           type: 2001,
           amount: 0,
@@ -129,11 +132,23 @@ export function FormContent({ available, price, tonPrice }) {
   }, [currency, amount, price])
 
   useEffect(() => {
-    if (isAuth) {
-      fetchGetBalance()
-      fetchUserInfo()
+    if (!isAuth) {
+      return;
     }
-  }, [isAuth, isSuccess])
+
+    const fetchInfo = async () => {
+      await fetchGetBalance();
+      await fetchUserInfo();
+    };
+
+    fetchInfo();  // Выполняем первый вызов немедленно
+
+    const timer = setInterval(() => {
+      fetchInfo();
+    }, 20000);
+
+    return () => clearInterval(timer);
+  }, [isAuth, isSuccess]);
 
   return (
     <form data-type={activeTab} onSubmit={submitHandler}>

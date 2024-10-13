@@ -33,7 +33,7 @@ export function Form() {
     }, 20000);
 
     return () => clearInterval(subscribe)
-  }, [])
+  }, [isAuth])
 
   useEffect(() => {
     if (isAuth) {
