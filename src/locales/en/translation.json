@@ -10,7 +10,8 @@
     "workshop"
   ],
   "intro": {
-    "button": "join game now"
+    "button": "join game now",
+    "link": "https://akronix.io/eng.mp4"
   },
   "about": {
     "head": {
@@ -239,7 +240,7 @@
     "title": "Check out our official white paper",
     "text": "pdf file contains more detailed information about the akronix platform, token and functionality",
     "button": "open",
-    "download": "download(15mb)",
+    "download": "download(85.4mb)",
     "link": "https://presale.akronix.io/WhitePaper_en.pdf"
   },
   "roadmap": {

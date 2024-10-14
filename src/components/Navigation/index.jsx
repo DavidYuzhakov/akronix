@@ -161,13 +161,13 @@ export function Navigation() {
           </div>
           <div className={styles.info}>
             <div className={styles.social}>
-              <a href="#">
+              <a href="https://t.me/akronix_p2e" target="_blank">
                 <img src={tgIcon} alt="telegram" />
               </a>
-              <a href="#">
+              <a href="https://youtube.com/@akronix_legacy" target="_blank">
                 <img src={ytIcon} alt="youtube" />
               </a>
-              <a href="#">
+              <a href="https://x.com/akronix_p2e" target="_blank">
                 <img src={xIcon} alt="x" />
               </a>
             </div>

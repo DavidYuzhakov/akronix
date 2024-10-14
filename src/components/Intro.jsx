@@ -2,7 +2,7 @@ import bgIntro from "../assets/images/intro/bg.png"
 import character from "../assets/images/intro/character.png"
 import videoImg from "../assets/images/video-player.png"
 import playImg from "../assets/icons/play.svg"
-import video from "../assets/video.mp4"
+import video from "../assets/video/eng.mp4"
 
 import { Button } from "./Button"
 import { useInView } from 'react-intersection-observer'
@@ -49,7 +49,7 @@ export function Intro () {
         </div>
       </div>
       {showVideo && <div onClick={(e) => closeModal(e)} className="dropdown">
-        <video className='video' width={840} height={560} autoPlay muted controls src={video}></video>
+        <video className='video' width={840} height={560} autoPlay src={t('intro.link')}></video>
       </div>}
     </>
   )

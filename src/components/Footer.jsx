@@ -29,9 +29,9 @@ export function Footer () {
           <img src={logo} alt="logo" />
         </div>
         <div className="footer__social">
-          <a href="#"><img src={tgIcon} alt="telegram" /></a>
-          <a href="#"><img src={ytIcon} alt="youtube" /></a>
-          <a href="#"><img src={xIcon} alt="x" /></a>
+          <a href="https://t.me/akronix_p2e" target={"_blank"}><img src={tgIcon} alt="telegram" /></a>
+          <a href="https://youtube.com/@akronix_legacy" target={"_blank"}><img src={ytIcon} alt="youtube" /></a>
+          <a href="https://x.com/akronix_p2e" target={"_blank"}><img src={xIcon} alt="x" /></a>
         </div>
         <nav className="footer__nav">
         <ul>
@@ -64,7 +64,6 @@ export function Footer () {
         </nav>
         <div className="footer__copyright">
         ©Copyright 2024 akronix. All Rights Reserved.
-        <a href="">{ t('footer.agreement') }</a>
         </div>
       </div>
     </footer>

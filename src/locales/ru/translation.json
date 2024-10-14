@@ -10,7 +10,8 @@
     "мастерская"
   ],
   "intro": {
-    "button": "присоединиться"
+    "button": "присоединиться",
+    "link": "https://akronix.io/rus.mp4"
   },
   "about": {
     "head": {
@@ -210,7 +211,7 @@
           ],
           "cards": [
             { "title": "вы заработали:" },
-            { "title": "доступно для клема:" }
+            { "title": "доступно для клейма:" }
           ]
         },
         {
@@ -239,7 +240,7 @@
     "title": "Ознакомьтесь с нашим официальным white paper",
     "text": "pdf файл содержит в себе более подробную информацию о платформе akronix, токене и функционале",
     "button": "открыть",
-    "download": "скачать(15mb)",
+    "download": "скачать(85.4mb)",
     "link": "https://presale.akronix.io/WhitePaper_ru.pdf"
   },
   "roadmap": {
