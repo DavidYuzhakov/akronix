@@ -115,6 +115,23 @@ export function FormContent({ available, price, tonPrice }) {
         }
       }
     }
+    else if(type === 'claim')
+    {
+      if (userInfo.can_claim_tge > 0) {
+        const txFillInfo = await ProofApi.getTxFill({
+          type: 2002,
+          amount: 0
+        })
+        const { success } = await TonConnect.fetchSendTransaction(txFillInfo.receiver, txFillInfo.amount, txFillInfo.payload)
+        if (success) {
+          setIsSuccess(true)
+          return showAlert(t('alert.nft.success'), 'success')
+        } else {
+          setIsSuccess(false)
+          return showAlert(t('alert.nft.error'))
+        }
+      }
+    }
   }
 
   function tabHandler(newTab) {
