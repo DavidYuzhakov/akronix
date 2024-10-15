@@ -283,7 +283,8 @@
       ],
       "availabel": "Exceeded the allowable number of tokens",
       "success": "Transaction sent successfully",
-      "error": "Failed to complete the transaction, please try again later"
+      "error": "Failed to complete the transaction, please try again later",
+      "stageFull": "Unable to purchase more tokens than are available at the current phase"
     },
     "partner": {
       "success": "Claim rewards successfully completed",

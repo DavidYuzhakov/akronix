@@ -54,7 +54,7 @@ export function FormContent({ available, price, tonPrice }) {
       } else {
         if(infoPresale.presale_started === false)
           return;
-        const limits = currency === 'ton' ? [0.5, 5000] : [5, 25000]
+        const limits = currency === 'ton' ? [1, 5000] : [5, 25000]
         const amountInUsd = buyHandler(currency, ...limits)
         if (available < amountInUsd) {
           return showAlert(t('alert.buy.availabel'))
@@ -64,7 +64,16 @@ export function FormContent({ available, price, tonPrice }) {
           const txFillInfo = await ProofApi.getTxFill({
             type: currency === 'ton' ? 1 : 2,
             amount: parseFloat(amount),
+            closed: false
           })
+
+          if(txFillInfo.code === 1) {
+            return showAlert(t('alert.buy.availabel'))
+          }
+          else if(txFillInfo.code === 2) {
+            return showAlert(t('alert.buy.stageFull'))
+          }
+
           const { success } = await TonConnect.fetchSendTransaction(
             txFillInfo.receiver,
             txFillInfo.amount,

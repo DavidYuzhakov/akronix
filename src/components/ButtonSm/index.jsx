@@ -3,7 +3,7 @@ import btn from "../../assets/icons/button-sm.svg"
 
 export const ButtonSm = ({ text, link }) => {
   return (
-    <a href={link ?? '#!'} className={styles.btn}>
+    <a href={link ?? '#!'}  target={"_blank"} className={styles.btn}>
       <img src={btn} alt="" />
       <span>{ text }</span>
       <div />

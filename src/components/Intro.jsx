@@ -2,7 +2,6 @@ import bgIntro from "../assets/images/intro/bg.png"
 import character from "../assets/images/intro/character.png"
 import videoImg from "../assets/images/video-player.png"
 import playImg from "../assets/icons/play.svg"
-import video from "../assets/video/eng.mp4"
 
 import { Button } from "./Button"
 import { useInView } from 'react-intersection-observer'
