@@ -62,9 +62,9 @@ export function Form() {
           <img src={quoteRight} alt="quote" />
         </h4>
       </div>
-      <h2>
-        { t('tokenomic.form.title.first') } <br /> { t('tokenomic.form.title.second') } ${infoPresale.current_amount * infoPresale.price } 
-      </h2>
+      {/*<h2>*/}
+      {/*  { t('tokenomic.form.title.first') } <br /> { t('tokenomic.form.title.second') } ${infoPresale.current_amount * infoPresale.price } */}
+      {/*</h2>*/}
       <img className={styles.el} src={el} alt="" />
       <div className={styles.fragment}>
         <img src={lines} alt="" />
